@@ -1,7 +1,7 @@
 Players = game:GetService("Players")
 ChatService = game:GetService("Chat")
 Char = Players.LocalPlayer.Character
-CloneName = "The Awesome King"
+CloneName = "Unknown Boss"
 Char.Archivable = true
 Clone = Char:clone()
 Clone.Archivable = true
