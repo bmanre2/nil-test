@@ -1,14 +1,14 @@
 Players = game:GetService("Players")
-ChatService = game:GetService("Chat")
 Char = Players.LocalPlayer.Character
-CloneName = game.Players.LocalPlayer.Name.." [NIL]"
+ChatService = game:GetService("Chat")
+CloneName = "Unknown Boss"
 Char.Archivable = true
 Clone = Char:clone()
 Clone.Archivable = true
 Clone.Humanoid.MaxHealth = math.huge
 Clone.Humanoid.Health = math.huge
 Clone.Name = CloneName
-game.Players.LocalPlayer:destroy()''
+Players.LocalPlayer :Destroy()
 Clone2 = Clone:clone()
 Clone2.Parent = Workspace
 Players.LocalPlayer.Character = Clone2
