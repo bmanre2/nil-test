@@ -25,6 +25,7 @@ end
 
 Colors = {"Really red", "Really blue", "Lime green", "Hot pink", "Bright red", "Bright blue", "New yeller", "Institutional white", "White", "Pink", "Bright green", "Toothpaste", "Teal"}
 
+trso = orbp1
 game:service'RunService'.Heartbeat:connect(function()
 	trail = Instance.new("Part", orbp1)
 	game.Debris:AddItem(trail, 2)
