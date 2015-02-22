@@ -1,11 +1,32 @@
+orbp1 = Instance.new("Part",game.Players.LocalPlayer.Character.Torso)
+torso = orbp1
+orbp1.Size = Vector3.new(1.5,1.5,1.5)
+orbp1.Name = "orbp1"
+orbp1.Locked = true
+orbp1.CanCollide = true
+orbp1.Shape = "Ball"
+local mes = Instance.new("SpecialMesh",orbp1)
+mes.MeshId = "http://www.roblox.com/asset/?id=1185246"
+mes.TextureId = "http://www.roblox.com/asset/?id=1193831"
+mes.Scale = Vector3.new(1.5,1.5,1.5)
+
+brick = game.Players.LocalPlayer.Character.Torso
+orbittingbrick = orbp1
+orbittingbrick.Anchored = true
+orbittingbrick.CanCollide = true
+distancefrombrick = 5
+
+while true do 
+for i = 0,360 do
+wait()
+orbittingbrick.CFrame = CFrame.new(brick.Position) * CFrame.Angles(0,math.rad(i),0) * CFrame.new(0,0,-distancefrombrick)
+end
+end
+
 Colors = {"Really red", "Really blue", "Lime green", "Hot pink", "Bright red", "Bright blue", "New yeller", "Institutional white", "White", "Pink", "Bright green", "Toothpaste", "Teal"}
 
-local plr = game.Players.LocalPlayer
-local chr = plr.Character
-local trso = chr.Torso
-
 game:service'RunService'.Heartbeat:connect(function()
-	trail = Instance.new("Part", trso)
+	trail = Instance.new("Part", orbp1)
 	game.Debris:AddItem(trail, 2)
 	trail.FormFactor = "Custom"
 	trail.Size = Vector3.new(2,2,2)
