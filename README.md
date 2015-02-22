@@ -1,98 +1,30 @@
-function _restoreproperties() 
-Holder = player.Character 
-Torso = Holder:FindFirstChild("Torso") 
-RightS = Torso:FindFirstChild("Right Shoulder") 
-LeftS = Torso:FindFirstChild("Left Shoulder") 
-RightH = Torso:FindFirstChild("Right Hip") 
-LeftH = Torso:FindFirstChild("Left Hip") 
-RightS.MaxVelocity = .15 
-LeftS.MaxVelocity = .15 
-RightH.MaxVelocity = .1 
-LeftH.MaxVelocity = .1 
-RightS.DesiredAngle = 0 
-LeftS.DesiredAngle = 0 
-LeftH.DesiredAngle = 0 
-RightH.DesiredAngle = 0 
-end 
-function ManageAnimation(value) 
-Holder = player.Character 
-Player = player 
-if value == "no anim" then 
-Anim = Holder:FindFirstChild("Animate") 
-if Anim~=nil then 
-Anim.Disabled = true 
-Anim.Parent = Player 
-end 
-elseif value == "re-anim" then 
-Anim = Player:FindFirstChild("Animate") 
-if Anim~=nil then 
-Anim.Disabled = false 
-Anim.Parent = Holder 
-end 
-end 
-end 
-function Stance() 
-Char = player.Character 
-L = Char.Torso:FindFirstChild("Left Shoulder") 
-R = Char.Torso:FindFirstChild("Right Shoulder") 
-if L~=nil then 
-L.DesiredAngle = 3.2 
-L.MaxVelocity = 3 
-end 
-if R~=nil then 
-R.DesiredAngle = 3.2 
-R.MaxVelocity = 3 
-end 
-L = Char.Torso:FindFirstChild("Left Hip") 
-R = Char.Torso:FindFirstChild("Right Hip") 
-if L~=nil then 
-L.DesiredAngle = 0 
-L.MaxVelocity = 3 
-end 
-if R~=nil then 
-R.DesiredAngle = 0 
-R.MaxVelocity = 3 
-end 
-end 
-function Down(ml) 
-for i=1, ml.velocity.y/3 do 
-ml.velocity = ml.velocity+Vector3.new(0,-4.25,0) 
-wait() 
-end 
-ml:Remove() 
-end 
-function Flip() 
-Char = player.Character 
-Human = Char.Humanoid 
-Torso = Char.Torso 
-CF = Torso.CFrame 
-ManageAnimation("re anim") 
-Stance() 
-Human.Jump = true
-VelUp = Instance.new("BodyVelocity") 
-VelUp.velocity = Vector3.new(0,72.5,0)+Torso.CFrame.lookVector*30 
-VelUp.P = VelUp.P*2 
-VelUp.maxForce = Vector3.new(10000,10000,10000)*999 
-VelUp.Parent = Torso 
-coroutine.resume(coroutine.create(Down),VelUp) 
-Gyro = Instance.new("BodyGyro") 
-Gyro.P = Gyro.P*10 
-Gyro.maxTorque = Vector3.new(100000,100000,100000)*999 
-Gyro.cframe = CF 
-Gyro.Parent = Torso 
-for i=1, 32 do 
-Gyro.cframe = Gyro.cframe*CFrame.fromEulerAnglesXYZ(math.pi/-16,0,0) 
-wait() 
-end 
-Gyro.cframe = CF 
-game:GetService("Debris"):AddItem(Gyro,2) 
-ManageAnimation("re-anim") 
-_restoreproperties() 
-end 
-function onActive(mouse) 
-player = game.Players.LocalPlayer 
-if player==nil then return end 
-mouse.Button1Down:connect(function() Flip() end) 
-end 
-script.Parent.Selected:connect(onActive) 
- 
+orbp1 = Instance.new("Part",game.Players.LocalPlayer.Character.Torso)
+torso = orbp1
+orbp1.Size = Vector3.new(1.5,1.5,1.5)
+orbp1.Name = "orbp1"
+orbp1.Locked = true
+orbp1.CanCollide = true
+orbp1.Shape = "Ball"
+local mes = Instance.new("SpecialMesh",orbp1)
+mes.MeshId = "http://www.roblox.com/asset/?id=1185246"
+mes.TextureId = "http://www.roblox.com/asset/?id=1193831"
+mes.Scale = Vector3.new(1.5,1.5,1.5)
+
+brick = game.Players.LocalPlayer.Character.Torso
+orbittingbrick = orbp1
+orbittingbrick.Anchored = true
+orbittingbrick.CanCollide = true
+distancefrombrick = 5
+
+while true do 
+for i = 0,360 do
+wait()
+orbittingbrick.CFrame = CFrame.new(brick.Position) * CFrame.Angles(0,math.rad(i),0) * CFrame.new(0,0,-distancefrombrick)
+end
+end
+
+
+game:service'RunService'.Heartbeat:connect(function()
+torso = workspace.Basictality.Torso.orbp1
+while wait() do p=Instance.new("Part",workspace) p.FormFactor = "Custom" p.Color = Color3.new(0,0,0) p.Size = Vector3.new(0.1,0.1,0.1)p.CFrame=torso.CFrame*CFrame.new(0.5,0,0) p.Transparency = 0.5 p.Anchored=true game.Debris:AddItem(p,1) end
+end)
