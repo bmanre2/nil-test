@@ -1,5 +1,6 @@
 wait() 
-z=Instance.new("Tool",game.Players.LocalPlayer.Backpack)
+z=Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+z.BinType = "Script"
 tool = z
 lineconnect = tool.LineConnect
 object = nil
