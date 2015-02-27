@@ -2,8 +2,7 @@
 	ra = char:FindFirstChild("Right Arm")
 	la = char:FindFirstChild("Left Arm")
 	torso = char.Torso
-	char.Humanoid.PlatformStand = true
-	
+char.Head.face.Texture = "http://www.roblox.com/asset/?id=136823537"
 	if ra then
 		torso["Right Shoulder"].Part0 = nil
 		torso["Right Shoulder"].Part1 = nil
