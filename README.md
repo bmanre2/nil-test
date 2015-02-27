@@ -1,62 +1,55 @@
-Position = {} --For the function if you die you can go back to your position instead of going back to the middle of the baseplate.
-Player = Game.Players.LocalPlayer
-Char = Player.Character
-Char.Archivable = true
-NilChar = Char:Clone()
-pcall(function() NilChar.Animate:Destroy() end)
-Player:Destroy()
-function LoadNil()
-	Animation = Game:GetService("InsertService"):LoadAsset(68452456):GetChildren()[1]:findFirstChild("Animate")
-	Clone = NilChar:Clone()
-	table.insert(Position,NilChar.Torso.CFrame)
-	Clone.Parent = Workspace
-	Clone:MakeJoints()
-	Player.Character = Clone
-	Player = Clone
-	Workspace.Camera.CameraSubject = Clone["Humanoid"]
-	Workspace.Camera.CameraType = "Custom"
-	Clone.Torso.CFrame = Position[#Position]
-	Animation.Parent = Clone
-	Workspace.Changed:connect(function()
-		if Workspace:findFirstChild(Player.Name) == nil then
-			LoadNil()
-			Clone.Parent = Workspace
-		end
-	end)
-	Game.Players.LocalPlayer.Chatted:connect(function(msg)
-		Game:GetService("Chat"):Chat(Clone.Head, msg, Red)
-	end)
-	Clone.Humanoid.Changed:connect(function()
-		Clone.Humanoid.Health = 100
-	end)
+	char = game.Players.LocalPlayer.Character
+	ra = char:FindFirstChild("Right Arm")
+	la = char:FindFirstChild("Left Arm")
+	torso = char.Torso
+	
+	if ra then
+		torso["Right Shoulder"].Part0 = nil
+		torso["Right Shoulder"].Part1 = nil
+		torso["Right Shoulder"].Name = "RSBlank"
+
+		NewRS = Instance.new("Weld", torso)
+		NewRS.Name = "Control Right Shoulder"
+		
+		--ra.Name = "RA"
+		ra.TopSurface = "Smooth"
+		
+		NewRS.Part0 = torso
+		NewRS.Part1 = ra
+		
+		NewRS.C0 = CFrame.new(1.5, .5, 0) * CFrame.Angles(0, math.rad(-20), math.rad(40)) * CFrame.new(0, -.25, 0)
+	end
+	
+	if la then
+		torso["Left Shoulder"].Part0 = nil
+		torso["Left Shoulder"]["Left Shoulder"].Part1 = nil
+		torso["Left Shoulder"]["Left Shoulder"].Name = "LSBlank"
+
+		NewLS = Instance.new("Weld", torso)
+		NewLS.Name = "Control Left Shoulder"
+		
+		--la.Name = "LA"
+		la.TopSurface = "Smooth"
+		
+		NewLS.Part0 = torso
+		NewLS.Part1 = la
+		
+		NewLS.C0 = CFrame.new(-1.5, .5, 0) * CFrame.Angles(0, math.rad(20), math.rad(-40)) * CFrame.new(0, -.25, 0)
+	end
+	
+	local USERNAME = game.Players.LocalPlayer.Name
+local RunService = Game:GetService("RunService")
+
+function HeadDown(neck, angle, num_frames, duration)
+local default_offset = neck.C0
+for frame_index = 1, num_frames do
+neck.C0 = default_offset * CFrame.Angles(frame_index / num_frames * angle, 0, 0)
+RunService.Stepped:wait()
 end
-LoadNil()
-Clone.Parent = Workspace
---[[
-	Position = {} --For the function if you die you can go back to your position instead of going back to the middle of the baseplate.
-Player = Game.Players.LocalPlayer
-Char = Player.Character
-Char.Archivable = true
-NilChar = Char:Clone()
-NilChar.Parent = Game:GetService("Geometry")
-Char.Animate:Destroy()
-Player:remove()
-function LoadNil()
-	WorkingAround = Game:GetService("InsertService"):LoadAsset(68452456):children()[1]
-	WorkingAround.Parent = Game.Lighting
-	Clone = NilChar:Clone()
-	table.insert(Position,Clone.Torso.CFrame)
-	Clone.Parent = Workspace
-	Clone:MakeJoints()
-	Player.Character = Clone
-	Workspace.Camera.CameraSubject = Clone["Humanoid"]
-	Workspace.Camera.CameraType = "Custom"
-	Clone:findFirstChild("Animate"):Destroy()
-	Clone.Torso.CFrame = Position[#Position]
-	Anim = WorkingAround.Animate:Clone()
-	Anim.Parent = Clone
-	Clone.Humanoid.Changed:connect(function()
-		Clone.Humanoid.Health = 100
-	Game:GetService("Players").LocalPlayer.Chatted:connect(function(msg) --Thanks terminal *from the orb script. c:
-		Game:GetServic
---]]
+Wait(duration)
+for frame_index = 1, num_frames do
+RunService.Stepped:wait()
+end
+end
+
+HeadDown(workspace[USERNAME].Torso.Neck, math.rad(22.5), 15, 2 / 3)
