@@ -2,6 +2,7 @@
 	ra = char:FindFirstChild("Right Arm")
 	la = char:FindFirstChild("Left Arm")
 	torso = char.Torso
+	char.Humanoid.PlatformStand = true
 	
 	if ra then
 		torso["Right Shoulder"].Part0 = nil
@@ -22,8 +23,8 @@
 	
 	if la then
 		torso["Left Shoulder"].Part0 = nil
-		torso["Left Shoulder"]["Left Shoulder"].Part1 = nil
-		torso["Left Shoulder"]["Left Shoulder"].Name = "LSBlank"
+		torso["Left Shoulder"].Part1 = nil
+		torso["Left Shoulder"].Name = "LSBlank"
 
 		NewLS = Instance.new("Weld", torso)
 		NewLS.Name = "Control Left Shoulder"
