@@ -66,11 +66,10 @@ if key == "e" then
 q = game.Players.LocalPlayer.Character.Torso
 v = Instance.new("Part",q)
 z = Instance.new("Part",q)
+q.Anchored = true
 
 for i = 1, 30 do f=Instance.new("Fire",v) f1=Instance.new("Fire",z)
 end
-
-while true do wait()
 x= q
 v.Anchored = true
 v.CanCollide = true
@@ -87,24 +86,6 @@ z.FormFactor = "Custom"
 z.Size = Vector3.new(0.5,0.5,0.5)
 z.CanCollide = false
 z.CFrame = x.CFrame * CFrame.new(-3.5,-3.1,0)
-end
-
-     local USERNAME = game.Players.LocalPlayer.Name
-local RunService = Game:GetService("RunService")
-
-function HeadDown(neck, angle, num_frames, duration)
-local default_offset = neck.C0
-for frame_index = 1, num_frames do
-neck.C0 = default_offset * CFrame.Angles(frame_index / num_frames * angle, 0, 0)
-RunService.Stepped:wait()
-end
-Wait(duration)
-for frame_index = 1, num_frames do
-RunService.Stepped:wait()
-end
-end
-
-HeadDown(workspace[USERNAME].Torso.Neck, math.rad(-22.5), 15, 2 / 3)
 
 end
 end)
