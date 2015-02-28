@@ -54,38 +54,36 @@ end
 
 HeadDown(workspace[USERNAME].Torso.Neck, math.rad(22.5), 15, 2 / 3)
 
-p=game.Players.LocalPlayer
-c=p.Character
-m=p:GetMouse()
-Player = game:GetService("Players").LocalPlayer
-mouse=Player:GetMouse()
-Cha = Player.Character
-mouse.KeyDown:connect(function(key)
-key:lower()
-if key == "e" then
-q = game.Players.LocalPlayer.Character.Torso
-v = Instance.new("Part",q)
-z = Instance.new("Part",q)
-q.Anchored = true
+local USERNAME = game.Players.LocalPlayer.Name
+local RunService = Game:GetService("RunService")
 
-for i = 1, 30 do f=Instance.new("Fire",v) f1=Instance.new("Fire",z)
+function HeadDown(neck, angle, num_frames, duration)
+local default_offset = neck.C0
+for frame_index = 1, num_frames do
+neck.C0 = default_offset * CFrame.Angles(frame_index / num_frames * angle, 0, 0)
+RunService.Stepped:wait()
 end
-x= q
-v.Anchored = true
-v.CanCollide = true
-v.Transparency=1
-v.FormFactor = "Custom"
-v.Size = Vector3.new(0.5,0.5,0.5)
-v.CanCollide = false
-v.CFrame = x.CFrame * CFrame.new(3.5,-3.1,0)
-
-z.CanCollide = true
-z.Transparency=1
-z.FormFactor = "Custom"
-z.Size = Vector3.new(0.5,0.5,0.5)
-z.CanCollide = false
-z.CFrame = x.CFrame * CFrame.new(-3.5,-3.1,0)
-z.Velocity=z.CFrame.lookVector*100
-
+Wait(duration)
+for frame_index = 1, num_frames do
+RunService.Stepped:wait()
 end
-end)
+end
+
+HeadDown(workspace[USERNAME].Torso["Left Hip"], math.rad(-5.5), 19, 15 / 15)
+
+local USERNAME = game.Players.LocalPlayer.Name
+local RunService = Game:GetService("RunService")
+
+function HeadDown(neck, angle, num_frames, duration)
+local default_offset = neck.C0
+for frame_index = 1, num_frames do
+neck.C0 = default_offset * CFrame.Angles(frame_index / num_frames * angle, 0, 0)
+RunService.Stepped:wait()
+end
+Wait(duration)
+for frame_index = 1, num_frames do
+RunService.Stepped:wait()
+end
+end
+
+HeadDown(workspace[USERNAME].Torso["Right Hip"], math.rad(-5.5), 19, 15 / 15)
