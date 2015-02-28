@@ -79,7 +79,6 @@ v.Size = Vector3.new(0.5,0.5,0.5)
 v.CanCollide = false
 v.CFrame = x.CFrame * CFrame.new(3.5,-3.1,0)
 
-z.Anchored = true
 z.CanCollide = true
 z.Transparency=1
 z.FormFactor = "Custom"
