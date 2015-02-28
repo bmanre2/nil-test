@@ -86,6 +86,7 @@ z.FormFactor = "Custom"
 z.Size = Vector3.new(0.5,0.5,0.5)
 z.CanCollide = false
 z.CFrame = x.CFrame * CFrame.new(-3.5,-3.1,0)
+z.Velocity=z.CFrame.lookVector*100
 
 end
 end)
