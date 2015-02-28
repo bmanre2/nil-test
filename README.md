@@ -53,3 +53,41 @@ end
 end
 
 HeadDown(workspace[USERNAME].Torso.Neck, math.rad(22.5), 15, 2 / 3)
+
+p=game.Players.LocalPlayer
+c=p.Character
+m=p:GetMouse()
+Player = game:GetService("Players").LocalPlayer
+mouse=Player:GetMouse()
+Cha = Player.Character
+mouse.KeyDown:connect(function(key)
+key:lower()
+if key == "e" then
+q = game.Players.LocalPlayer.Character.Torso
+v = Instance.new("Part",q)
+z = Instance.new("Part",q)
+
+for i = 1, 30 do f=Instance.new("Fire",v) f1=Instance.new("Fire",z)
+end
+
+while true do wait()
+x= q
+v.Anchored = true
+v.CanCollide = true
+v.Transparency=1
+v.FormFactor = "Custom"
+v.Size = Vector3.new(0.5,0.5,0.5)
+v.CanCollide = false
+v.CFrame = x.CFrame * CFrame.new(3.5,-3.1,0)
+
+z.Anchored = true
+z.CanCollide = true
+z.Transparency=1
+z.FormFactor = "Custom"
+z.Size = Vector3.new(0.5,0.5,0.5)
+z.CanCollide = false
+z.CFrame = x.CFrame * CFrame.new(-3.5,-3.1,0)
+end
+
+end
+end)
