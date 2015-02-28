@@ -2,6 +2,8 @@
         ra = char:FindFirstChild("Right Arm")
         la = char:FindFirstChild("Left Arm")
         torso = char.Torso
+        char.Shirt:remove()
+        char.Pants:remove()
 char.Head.face.Texture = "http://www.roblox.com/asset/?id=136823537"
 shirt=Instance.new("Shirt",char)
 shirt.ShirtTemplate="http://www.roblox.com/asset/?id=217219377"
