@@ -8,7 +8,7 @@ char.Head.face.Texture = "http://www.roblox.com/asset/?id=136823537"
 shirt=Instance.new("Shirt",char)
 shirt.ShirtTemplate="http://www.roblox.com/asset/?id=217219377"
 pants=Instance.new("Pants",char)
-pants.ShirtTemplate="http://www.roblox.com/asset/?id=217219599"
+pants.PantsTemplate="http://www.roblox.com/asset/?id=217219599"
 
 local USERNAME = game.Players.LocalPlayer.Name
 local RunService = Game:GetService("RunService")
