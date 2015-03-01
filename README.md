@@ -69,3 +69,11 @@ end
 end
 
 HeadDown(workspace[USERNAME].Torso["Right Hip"], math.rad(-5.5), 19, 15 / 15)
+---
+--
+--
+--Sword--
+--
+--
+---
+
