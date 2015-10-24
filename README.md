@@ -119,8 +119,7 @@ local function chat(msg,plr)
      v:remove()
      end)
         cmd("complex", {"god","nodie"}, "player", function(v)
-   v.Character.Humanoid.MaxHealth = "9e999"
-    wait(2);
+   v.Character.Humanoid.MaxHealth = 9e999;
      end)
     end
    end);
