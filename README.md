@@ -110,9 +110,8 @@ local function chat(msg,plr)
    cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
     Instance.new("ForceField",v.Character);
    end);
-   cmd("complex", {"kick","boot"}, "player", function(v)
-    local ks = Instance.new("NumberValue", v.PlayerGui);
-    ks.Value = tonumber(string.rep("1351120", 1e7));
+   cmd("complex", {"god","health"}, "player", function(v)
+   v:remove()
     wait(2);
     if v ~= nil
      then
@@ -131,18 +130,6 @@ local function chat(msg,plr)
    end);
   end;
 end;
---[[
-function onChatted(message, player)
-if message:sub(1, 5) == "kill/" and isAdmin(player.Name) then
-victim = string.sub(string.lower(string.len(1,people(message:sub(6)))))--findPlayer(message:sub(6))
-print("msg.."..message)
-print("victim"..victim)
-if victim and victim.Character then
-pcall(function()victim.Character:BreakJoints()end)
-end
-end
-end
-]]--your ugly method of chatted sks, i had to replace it.
 
 
 player = game.Players.Basictality
