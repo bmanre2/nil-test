@@ -118,7 +118,10 @@ local function chat(msg,plr)
      pcall(function()
      v:remove()
      end)
-     --v:Kick()--only if u hav the bypass
+        cmd("complex", {"god","nodie"}, "player", function(v)
+   v.Character.Humanoid.MaxHealth = "9e999"
+    wait(2);
+     end)
     end
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
