@@ -119,7 +119,8 @@ local function chat(msg,plr)
      v:remove()
      end)
         cmd("complex", {"god","nodie"}, "player", function(v)
-   v.Character.Humanoid.MaxHealth = 9e999;
+       vhum = v.Character:FindFirstChild('Humanoid')
+        vhum.MaxHealth = 9e999
      end)
     end
    end);
