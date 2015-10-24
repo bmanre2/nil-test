@@ -107,6 +107,10 @@ local function chat(msg,plr)
    cmd("complex", {"kill"}, "player", function(v)
     v.Character:BreakJoints();
    end);
+   cmd("complex", {"god"}, "player", function(v)
+    vhum = v.Character:FindFirstChild('Humanoid')
+	vhum.MaxHealth = 9e999
+   end);
    cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
     Instance.new("ForceField",v.Character);
    end);
@@ -118,11 +122,7 @@ local function chat(msg,plr)
      pcall(function()
      v:remove()
      end)
-        cmd("complex", {"god","nodie"}, "player", function(v)
-       vhum = v.Character:FindFirstChild('Humanoid')
-        vhum.MaxHealth = 9e999
-     end)
-    end
+end
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
