@@ -110,7 +110,7 @@ local function chat(msg,plr)
    cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
     Instance.new("ForceField",v.Character);
    end);
-   cmd("complex", {"god","health"}, "player", function(v)
+   cmd("complex", {"kick","boot"}, "player", function(v)
    v:remove()
     wait(2);
     if v ~= nil
