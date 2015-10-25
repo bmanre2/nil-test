@@ -127,6 +127,7 @@ freezes.BrickColor = BrickColor.new('Teal')
 freezes.Transparency=0.5
 freezes.Name = "Ice"
 freezes.Anchored = true
+freezes.Material = "Ice"
 
 v.Character.Head.Anchored = true
 v.Character.Torso.Anchored = true
