@@ -123,7 +123,7 @@ local function chat(msg,plr)
 freezes.FormFactor = "Custom"
 freezes.Size = Vector3.new(4.5,6.5,4.5)
 freezes.Material = "SmoothPlastic"
-freezes.BrickColor = BrickColor.new('Navy blue')
+freezes.BrickColor = BrickColor.new('Teal')
 freezes.Transparency=0.5
 freezes.Name = "Ice"
 freezes.Anchored = true
