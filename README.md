@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works v.1.1'
+print'works v.1.1.1'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -86,12 +86,14 @@ local function chat(msg,plr)
         
      elseif pt == "workspace" then
         for i,w in pairs(workspace:children())do
+	if string.find(msg:lower(),k) then
          Spawn(function()
           pcall(function()
            f(workspace);
           end);
          end);
-        end;
+	        end;
+	end;
        elseif pt == "na" then
         Spawn(function()
          pcall(function()
