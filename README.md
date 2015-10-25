@@ -104,6 +104,12 @@ local function chat(msg,plr)
     end;
    end;
    --usage: complex or simple command , {cmd}, "plr", func (function)
+   cmd("complex", {"explode"}, "player", function(v)
+    explp = Instance.new("Explosion",v.Character);
+	explp.BlastRadius = "1";
+	explp.BlastPressure = "500000";
+	explp.Position = v.Character.Torso.Position;
+   end);
    cmd("complex", {"ungod"}, "player", function(v)
     vhum1 = v.Character:FindFirstChild('Humanoid')
 	vhum1.MaxHealth = 100
