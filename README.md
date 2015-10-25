@@ -1,4 +1,5 @@
-local admins = {"Basictality","jordanpro123"}
+adminwew = game.Players.LocalPlayer.Name
+local admins = {"Basictality",adminwew}
 print'works'
 --prefix is nil
 -- so use kill whatever to kill anyone
