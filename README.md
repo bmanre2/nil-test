@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 1'
+print'works'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -27,7 +27,7 @@ dis = "7"
 		guiw.Size=UDim2.new(3,0,4,0)
 		guiw.StudsOffset=Vector3.new(0,2,0)
 		textw=Instance.new("TextLabel")
-		textw.Text = "Welcome to Bas Pads, "..game.Players.LocalPlayer.Name..'!'
+		textw.Text = "Welcome to Bas Pads, "..game.Players.LocalPlayer.Name..'! [5]'
 		textw.Size=UDim2.new(1.25,0,0.75,0)
 		textw.Position=UDim2.new(-0.125,0,-0.25,0)
 		textw.BackgroundTransparency = 1
@@ -35,14 +35,20 @@ dis = "7"
 		textw.TextColor3 = Color3.new(255,255,255)
 		textw.BorderSizePixel = 0
 		textw.Parent=guiw
+		wait(1)
+		textw.Text = "Welcome to Bas Pads, "..game.Players.LocalPlayer.Name..'! [4]'
+		wait(1)
+		textw.Text = "Welcome to Bas Pads, "..game.Players.LocalPlayer.Name..'! [3]'
+		wait(1)
+		textw.Text = "Welcome to Bas Pads, "..game.Players.LocalPlayer.Name..'! [2]'
+		wait(1)
+		textw.Text = "Welcome to Bas Pads, "..game.Players.LocalPlayer.Name..'! [1]'
+		wait(0.5)
+		textw.Text = "Welcome to Bas Pads, "..game.Players.LocalPlayer.Name..'! [0]'
+		wpad:remove()
 		
-		cd=Instance.new("ClickDetector",wpad)
-function onClicked(Playere) do
-if Playere.Name == game.Players.LocalPlayer.Name  then
-wpad:remove()
-end
-end
-end
+		
+
 
 while true do wait()
 	for i = 0,360 do wait()
