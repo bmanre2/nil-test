@@ -171,6 +171,28 @@ end);
      v:remove()
      end)
 end
+   cmd("complex", {"pad"}, "player", function(v)
+pad = Instance.new("Part",v.Character)
+pad.Name = "BasPad"
+Instance.new("CylinderMesh",pad)
+pad.Anchored = true
+pad.FormFactor = "Custom"
+pad.Size = Vector3.new(3.5,0,3.5)
+pad.Color = Color3.new(0,0,0)
+
+game:GetService('RunService').Stepped:connect(function()
+col = "1"
+pad.CFrame = v.Character.Torso.CFrame * CFrame.new(0,-3,0)
+padp=Instance.new('Part',pad)
+Instance.new('CylinderMesh',padp)
+padp.FormFactor = "Custom"
+padp.Anchored = true
+padp.Size = Vector3.new(2.5,0,2.5)
+padp.BrickColor = BrickColor.new'Teal'
+padp.CFrame = CFrame.new(pad.Position) * CFrame.new(0,-0.1,0)
+game.Debris:AddItem(padp,1)
+end)
+   end);
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
