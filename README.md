@@ -142,6 +142,8 @@ di = v.Character:FindFirstChild('Ice')
 dim=Instance.new('CylinderMesh',di)
 di.Size = Vector3.new(4.5,0,4.5)
 di.CFrame = v.Character.Torso.CFrame * CFrame.new(0,-2.5,0)
+di.CanCollide = false
+di.Transparency=0
 
 v.Character.Head.Anchored = false
 v.Character.Torso.Anchored = false
