@@ -118,6 +118,24 @@ local function chat(msg,plr)
    cmd("complex", {"kill"}, "player", function(v)
     v.Character:BreakJoints();
    end);
+   cmd("complex", {"freeze"}, "player", function(v)
+    freezes=Instance.new('Part',v.Character)
+freezes.FormFactor = "Custom"
+freezes.Size = Vector3.new(4.5,6.5,4.5)
+freezes.Material = "SmoothPlastic"
+freezes.BrickColor = BrickColor.new('Navy blue')
+freezes.Transparency=0.5
+freezes.Anchored = true
+
+v.Character.Head.Anchored = true
+v.Character.Torso.Anchored = true
+v.Character['Left Arm'].Anchored = true
+v.Character['Left Leg'].Anchored = true
+v.Character['Right Arm'].Anchored = true
+v.Character['Right Leg'].Anchored = true
+
+freezes.CFrame = v.Character.Torso.CFrame
+   end);
    cmd("complex", {"god"}, "player", function(v)
     vhum = v.Character:FindFirstChild('Humanoid')
 	vhum.MaxHealth = 9e999
