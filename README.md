@@ -1,5 +1,5 @@
 local admins = game.Players.LocalPlayer.Name
-print"[BAS] Basictality's Admin Loaded! [BAS]"
+
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -123,7 +123,7 @@ local function chat(msg,plr)
 freezes.FormFactor = "Custom"
 freezes.Size = Vector3.new(4.5,6.5,4.5)
 freezes.Material = "SmoothPlastic"
-freezes.BrickColor = BrickColor.new('Teal')
+freezes.BrickColor = BrickColor.new('Navy blue')
 freezes.Transparency=0.5
 freezes.Name = "Ice"
 freezes.Anchored = true
