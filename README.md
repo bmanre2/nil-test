@@ -175,5 +175,5 @@ end
   end;
 end;
 
-player = game.Players.LocalPlayer
+player = game.Players[admins].Name
 player.Chatted:connect(function(message) chat(message, player) end)
