@@ -1,5 +1,5 @@
-local admins = game.Players.LocalPlayer.Name
-print"Basictality's Admin Loaded!"
+local admins = {"Basictality","jordanpro123"}
+print"[BA] Basictality's Admin Loaded! [BA]"
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -175,5 +175,5 @@ end
   end;
 end;
 
-player = game.Players.Basictality
+player = game.Players[admins]
 player.Chatted:connect(function(message) chat(message, player) end)
