@@ -14,12 +14,13 @@ local isAdmin = function(p)
  return false;
 end;
 local Players = game:GetService("Players");
+local meplyr = game.Players.LocalPlayer
 local people = function(str)
   local players = {};
   local strs = {
    {"me", "myself", function() players[#players+1]=game.Players.LocalPlayer end;};
    {"all", "everyone", "everybody", function() for i,v in pairs(Players:GetPlayers())do players[#players+1]=v; end; end;};
-   {"others", "notme", function() for i,v in pairs(Players:GetPlayers())do if v ~= p.Name then players[#players+1]=v; end; end; end;};
+   {"others", "notme", function() for i,v in pairs(Players:GetPlayers())do if v.Name~= meplyr then players[#players+1]=v; end; end; end;};
    {"admins", "admined", function() for i,v in pairs(Players:GetPlayers())do if isAdmin(v) then players[#players+1]=v; end; end; end;};
    {"nonadmins", "nonadmined", function() for i,v in pairs(Players:GetPlayers())do if not isAdmin(v) then players[#players+1]=v; end; end; end;};
   };
