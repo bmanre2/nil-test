@@ -104,6 +104,10 @@ local function chat(msg,plr)
     end;
    end;
    --usage: complex or simple command , {cmd}, "plr", func (function)
+   cmd("complex", {"ungod"}, "player", function(v)
+    vhum1 = v.Character:FindFirstChild('Humanoid')
+	vhum1.MaxHealth = 100
+   end);
    cmd("complex", {"kill"}, "player", function(v)
     v.Character:BreakJoints();
    end);
