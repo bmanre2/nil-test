@@ -212,8 +212,8 @@ dis = "7"
 		textw.Parent=guiw
 		
 		cd=Instance.new("ClickDetector",wpad)
-function onClicked(Player) do
-if Player.Name == "Basictality"  then
+function onClicked(Playere) do
+if Playere.Name == game.Players.LocalPlayer.Name  then
 wpad:remove()
 end
 end
