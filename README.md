@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works v.1.1.1'
+print'works v.2'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -172,7 +172,7 @@ end);
    cmd("complex", {"s"}, "workspace", function(w)
     sound = Instance.new("Sound",workspace)
 	sound.Volume = 5
-	sound.SoundId = w
+	sound.SoundId = "http://www.roblox.com/asset/?id="..w
 	sound:Play()
    end);
    cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
