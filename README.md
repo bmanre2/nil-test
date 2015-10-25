@@ -125,6 +125,7 @@ freezes.Size = Vector3.new(4.5,6.5,4.5)
 freezes.Material = "SmoothPlastic"
 freezes.BrickColor = BrickColor.new('Navy blue')
 freezes.Transparency=0.5
+freezes.Name = "Ice"
 freezes.Anchored = true
 
 v.Character.Head.Anchored = true
@@ -136,6 +137,17 @@ v.Character['Right Leg'].Anchored = true
 
 freezes.CFrame = v.Character.Torso.CFrame
    end);
+   cmd("complex", {"freeze"}, "player", function(v)
+di = v.Character:FindFirstChild('Ice')
+di:remove()
+
+v.Character.Head.Anchored = false
+v.Character.Torso.Anchored = false
+v.Character['Left Arm'].Anchored = false
+v.Character['Left Leg'].Anchored = false
+v.Character['Right Arm'].Anchored = false
+v.Character['Right Leg'].Anchored = false
+end);
    cmd("complex", {"god"}, "player", function(v)
     vhum = v.Character:FindFirstChild('Humanoid')
 	vhum.MaxHealth = 9e999
