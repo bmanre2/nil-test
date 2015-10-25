@@ -137,7 +137,7 @@ v.Character['Right Leg'].Anchored = true
 
 freezes.CFrame = v.Character.Torso.CFrame
    end);
-   cmd("complex", {"freeze"}, "player", function(v)
+   cmd("complex", {"thaw"}, "player", function(v)
 di = v.Character:FindFirstChild('Ice')
 dim=Instance.new('CylinderMesh',di)
 di.Size = Vector3.new(4.5,0,4.5)
