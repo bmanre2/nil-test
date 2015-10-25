@@ -1,4 +1,4 @@
-local admins = game.Players.LocalPlayer.Name
+local admins = {"Basictality"}
 
 --prefix is nil
 -- so use kill whatever to kill anyone
@@ -144,7 +144,6 @@ end
    end);
   end;
 end;
-
 
 player = game.Players.Basictality
 player.Chatted:connect(function(message) chat(message, player) end)
