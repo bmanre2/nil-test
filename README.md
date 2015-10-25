@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works'
+print'works 1'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -20,6 +20,12 @@ wpad.Transparency=0.3
 wpads.LineThickness = "0.0.1"
 wpads.Color = BrickColor.new'Really black'
 dis = "7"
+
+while true do wait()
+	for i = 0,360 do wait()
+	wpad.CFrame = CFrame.new(game.Players.LocalPlayer.Character.Torso.Position) * CFrame.fromEulerAnglesXYZ(0,math.rad(i),0) * CFrame.new(0,0,-dis) * CFrame.Angles(math.rad(i),math.rad(i),math.rad(i))
+	end
+	end
 
 		guiw=Instance.new("BillboardGui")
 		guiw.Parent=wpad
@@ -47,14 +53,6 @@ dis = "7"
 		textw.Text = "Welcome to Bas Pads, "..game.Players.LocalPlayer.Name..'! [0]'
 		wpad:remove()
 		
-		
-
-
-while true do wait()
-	for i = 0,360 do wait()
-	wpad.CFrame = CFrame.new(game.Players.LocalPlayer.Character.Torso.Position) * CFrame.fromEulerAnglesXYZ(0,math.rad(i),0) * CFrame.new(0,0,-dis) * CFrame.Angles(math.rad(i),math.rad(i),math.rad(i))
-	end
-	end
 
 
 local isAdmin = function(p)
