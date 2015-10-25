@@ -137,7 +137,7 @@ v.Character['Right Leg'].Anchored = true
 
 freezes.CFrame = v.Character.Torso.CFrame
    end);
-   cmd("complex", {"freeze"}, "player", function(v)
+   cmd("complex", {"thaw"}, "player", function(v)
 di = v.Character:FindFirstChild('Ice')
 di:remove()
 
