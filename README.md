@@ -1,5 +1,5 @@
 local admins = game.Players.LocalPlayer.Name
-print'Basictality's Admin Loaded!'
+print"Basictality's Admin Loaded!"
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
