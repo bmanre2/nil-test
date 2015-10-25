@@ -1,11 +1,54 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works'
+print'works 1'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
 --have fun
 
+wpad = Instance.new('Part',workspace)
+wpad.Name = "Pad"
+wpad.Anchored = true
+wpad.CanCollide = false
+wpad.FormFactor = "Custom"
+wpad.Size = Vector3.new(2.5,3.5,0)
+wpad.Material = "SmoothPlastic"
+wpad.BrickColor = BrickColor.new'Lime green'
+wpads=Instance.new('SelectionBox',wpad)
+wpads.Adornee=wpad
+wpad.Transparency=0.3
+wpads.LineThickness = "0.0.1"
+wpads.Color = BrickColor.new'Really black'
+dis = "7"
+
+		guiw=Instance.new("BillboardGui")
+		guiw.Parent=wpad
+		guiw.Adornee=wpad
+		guiw.Size=UDim2.new(3,0,4,0)
+		guiw.StudsOffset=Vector3.new(0,2,0)
+		textw=Instance.new("TextLabel")
+		textw.Text = "Welcome to Bas Pads, "..game.Players.LocalPlayer.Name..'!'
+		textw.Size=UDim2.new(1.25,0,0.75,0)
+		textw.Position=UDim2.new(-0.125,0,-0.25,0)
+		textw.BackgroundTransparency = 1
+		textw.FontSize = "Size28"
+		textw.TextColor3 = Color3.new(255,255,255)
+		textw.BorderSizePixel = 0
+		textw.Parent=guiw
+		
+		cd=Instance.new("ClickDetector",wpad)
+function onClicked(Playere) do
+if Playere.Name == game.Players.LocalPlayer.Name  then
+wpad:remove()
+end
+end
+end
+
+while true do wait()
+	for i = 0,360 do wait()
+	wpad.CFrame = CFrame.new(game.Players.LocalPlayer.Character.Torso.Position) * CFrame.fromEulerAnglesXYZ(0,math.rad(i),0) * CFrame.new(0,0,-dis) * CFrame.Angles(math.rad(i),math.rad(i),math.rad(i))
+	end
+	end
 
 
 local isAdmin = function(p)
@@ -179,48 +222,3 @@ end;
 
 player = game.Players.LocalPlayer
 player.Chatted:connect(function(message) chat(message, player) end)
-
-admin = game.Players.LocalPlayer.Name
-wpad = Instance.new('Part',workspace)
-wpad.Name = "Pad"
-wpad.Anchored = true
-wpad.CanCollide = false
-wpad.FormFactor = "Custom"
-wpad.Size = Vector3.new(2.5,3.5,0)
-wpad.Material = "SmoothPlastic"
-wpad.BrickColor = BrickColor.new'Lime green'
-wpads=Instance.new('SelectionBox',wpad)
-wpads.Adornee=wpad
-wpad.Transparency=0.3
-wpads.LineThickness = "0.0.1"
-wpads.Color = BrickColor.new'Really black'
-dis = "7"
-
-		guiw=Instance.new("BillboardGui")
-		guiw.Parent=wpad
-		guiw.Adornee=wpad
-		guiw.Size=UDim2.new(3,0,4,0)
-		guiw.StudsOffset=Vector3.new(0,2,0)
-		textw=Instance.new("TextLabel")
-		textw.Text = "Welcome to Bas Pads, "..game.Players.LocalPlayer.Name..'!'
-		textw.Size=UDim2.new(1.25,0,0.75,0)
-		textw.Position=UDim2.new(-0.125,0,-0.25,0)
-		textw.BackgroundTransparency = 1
-		textw.FontSize = "Size28"
-		textw.TextColor3 = Color3.new(255,255,255)
-		textw.BorderSizePixel = 0
-		textw.Parent=guiw
-		
-		cd=Instance.new("ClickDetector",wpad)
-function onClicked(Playere) do
-if Playere.Name == game.Players.LocalPlayer.Name  then
-wpad:remove()
-end
-end
-end
-
-while true do wait()
-	for i = 0,360 do wait()
-	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(0,math.rad(i),0) * CFrame.new(0,0,-dis) * CFrame.Angles(math.rad(i),math.rad(i),math.rad(i))
-	end
-	end
