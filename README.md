@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works v.2'
+print'works'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -84,16 +84,6 @@ local function chat(msg,plr)
         end);
        elseif pt == "all" then
         
-     elseif pt == "workspace" then
-        for i,w in pairs(workspace:children())do
-	if string.find(msg:lower(),k) then
-         Spawn(function()
-          pcall(function()
-           f(workspace);
-          end);
-         end);
-	        end;
-	end;
        elseif pt == "na" then
         Spawn(function()
          pcall(function()
@@ -168,12 +158,6 @@ end);
    cmd("complex", {"god"}, "player", function(v)
     vhum = v.Character:FindFirstChild('Humanoid')
 	vhum.MaxHealth = 9e999
-   end);
-   cmd("complex", {"s"}, "workspace", function(w)
-    sound = Instance.new("Sound",workspace)
-	sound.Volume = 5
-	sound.SoundId = "http://www.roblox.com/asset/?id="..w
-	sound:Play()
    end);
    cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
     Instance.new("ForceField",v.Character);
