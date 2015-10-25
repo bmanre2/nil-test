@@ -137,9 +137,11 @@ v.Character['Right Leg'].Anchored = true
 
 freezes.CFrame = v.Character.Torso.CFrame
    end);
-   cmd("complex", {"thaw"}, "player", function(v)
+   cmd("complex", {"freeze"}, "player", function(v)
 di = v.Character:FindFirstChild('Ice')
-di:remove()
+dim=Instance.new('CylinderMesh',di)
+di.Size = Vector3.new(4.5,0,4.5)
+di.CFrame = v.Character.Torso.CFrame * CFrame.new(0,-2.5,0)
 
 v.Character.Head.Anchored = false
 v.Character.Torso.Anchored = false
@@ -147,6 +149,7 @@ v.Character['Left Arm'].Anchored = false
 v.Character['Left Leg'].Anchored = false
 v.Character['Right Arm'].Anchored = false
 v.Character['Right Leg'].Anchored = false
+game.Debriss:AddItem(5,di)
 end);
    cmd("complex", {"god"}, "player", function(v)
     vhum = v.Character:FindFirstChild('Humanoid')
