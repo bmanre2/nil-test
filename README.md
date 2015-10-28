@@ -67,12 +67,21 @@ local function chat(msg,plr)
           end);
          end);
         end;
+       if pt == "workspace" then
+        for i,v in pairs(workspace:children())do
+         Spawn(function()
+          pcall(function()
+           f(v);
+          end);
+         end);
+        end;
        elseif pt == "string" then
         f(post);
        end;
        break;
       end;
      end;
+end;
     elseif ct == "simple" then
      for q,k in pairs(s) do
       if msg:lower() == k then
@@ -163,6 +172,9 @@ end);
     Instance.new("ForceField",v.Character);
    end);
    cmd("complex", {"kick","boot"}, "player", function(v)
+	v:remove()
+   end);
+  cmd("simple", {"m","message"}, "player", function(v)
 	v:remove()
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
