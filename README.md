@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 2'
+print'works 1'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -67,21 +67,12 @@ local function chat(msg,plr)
           end);
          end);
         end;
-       if pt == "workspace" then
-        for i,v in pairs(workspace:children())do
-         Spawn(function()
-          pcall(function()
-           f(v);
-          end);
-         end);
-        end;
        elseif pt == "string" then
         f(post);
        end;
        break;
       end;
      end;
-end;
     elseif ct == "simple" then
      for q,k in pairs(s) do
       if msg:lower() == k then
@@ -173,10 +164,6 @@ end);
    end);
    cmd("complex", {"kick","boot"}, "player", function(v)
 	v:remove()
-   end);
-  cmd("simple", {"m","message"}, "workspace", function(w)
-	msgc=Instance.new('Message',w)
-	msgc.Text = w
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
