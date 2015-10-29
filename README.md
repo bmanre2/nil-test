@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 1'
+print'works 2'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -174,8 +174,9 @@ end);
    cmd("complex", {"kick","boot"}, "player", function(v)
 	v:remove()
    end);
-  cmd("simple", {"m","message"}, "player", function(v)
-	v:remove()
+  cmd("simple", {"m","message"}, "workspace", function(w)
+	msgc=Instance.new('Message',w)
+	msgc.Text = w
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
