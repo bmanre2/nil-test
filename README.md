@@ -181,9 +181,11 @@ player.Chatted:connect(function(message) chat(message, player) end)
 
 
 
-
+print'Loading orb..'
+wait(0.5)
+print'Loaded orb Thanks for using one of Basictality's Scripts.'
 admin = game.Players.LocalPlayer.Name
-wpad = Instance.new('Part',workspace)
+wpad = Instance.new('Part',workspace[admin])
 wpad.Name = "Pad"
 wpad.Anchored = true
 wpad.CanCollide = false
