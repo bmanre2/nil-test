@@ -188,6 +188,7 @@ admin = game.Players.LocalPlayer.Name
 wpad = Instance.new('Part',workspace[admin])
 wpad.Name = "Pad"
 wpad.Anchored = true
+wpadpointlight=Instance.new('PontLight',wpad)
 wpad.CanCollide = false
 wpad.FormFactor = "Custom"
 wpad.Shape = "Ball"
