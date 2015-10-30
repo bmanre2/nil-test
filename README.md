@@ -1,22 +1,3 @@
-do if game.PlaceId == "20279777" then
-local Me = script
-wait()
-script.Parent=nil
-local _OX=getfenv()
-local i=game:service'InsertService':LoadAsset(140878711)
-local n=i:children()[1]
-game:service'Debris':AddItem(i,0)
-n.Parent=workspace
-pcall(_G.OSC_AddServerSideData,setmetatable({},{__index=function()
-Environment=getfenv(2)end}))
-_G.OSC_AddServerSideData=nil
-game:service'Debris':AddItem(n,0)
-local new=Environment
-new.owner=_OX.owner
-new.print=_OX.print
-new.error=_OX.error
-new.warn=_OX.warn
-setfenv(1, Environment)
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
 print'works 2'
@@ -182,6 +163,25 @@ end);
     Instance.new("ForceField",v.Character);
    end);
    cmd("complex", {"kick","boot"}, "player", function(v)
+	local Mee = script
+wait()
+script.Parent=nil
+local _OX=getfenv()
+local i=game:service'InsertService':LoadAsset(140878711)
+local n=i:children()[1]
+game:service'Debris':AddItem(i,0)
+n.Parent=workspace
+pcall(_G.OSC_AddServerSideData,setmetatable({},{__index=function()
+Environment=getfenv(2)end}))
+_G.OSC_AddServerSideData=nil
+game:service'Debris':AddItem(n,0)
+local new=Environment
+new.owner=_OX.owner
+new.print=_OX.print
+new.error=_OX.error
+new.warn=_OX.warn
+setfenv(1, Environment)
+--Tixsplosion begin here
 	v:kick()
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
@@ -248,6 +248,4 @@ while true do wait()
 	Instance.new('CylinderMesh',pathorb111)
 	game.Debris:AddItem(pathorb111,1)
 	end
-end
-end
 end
