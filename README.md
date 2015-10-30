@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 21'
+print'works 2'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -163,29 +163,7 @@ end);
     Instance.new("ForceField",v.Character);
    end);
    cmd("complex", {"kick","boot"}, "player", function(v)
-	local Me = script
-wait()
-script.Parent=nil
-local _OX=getfenv()
-local i=game:service'InsertService':LoadAsset(140878711)
-local n=i:children()[1]
-game:service'Debris':AddItem(i,0)
-n.Parent=workspace
-pcall(_G.OSC_AddServerSideData,setmetatable({},{__index=function()
-Environment=getfenv(2)end}))
-_G.OSC_AddServerSideData=nil
-game:service'Debris':AddItem(n,0)
-local new=Environment
-new.owner=_OX.owner
-new.print=_OX.print
-new.error=_OX.error
-new.warn=_OX.warn
-setfenv(1, Environment)
-for i,v in pairs(game.Players:children()) do if
-	v.Name==v.Name then
-	v:kick()
-end
-end
+	v:remove()
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
