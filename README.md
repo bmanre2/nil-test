@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 4'
+print'works 3'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -170,6 +170,7 @@ end);
 	pad = Instance.new("Part",v.Character)
 Instance.new('CylinderMesh',pad)
 pad.Anchored = true
+pad.Name = "BasPadEncrypted4343434343434343"
 pad.FormFactor = "Custom"
 pad.Size = Vector3.new(3.5,0,3.5)
 pad.Color = Color3.new(0,0,0)
@@ -184,6 +185,10 @@ pad2.Size = Vector3.new(3.3,0,3.3)
 pad2.CFrame = pad.CFrame * CFrame.new(0,-0.1,0)
 game.Debris:AddItem(pad2,1)
 end
+   end);
+  cmd("complex", {"unpad","nopad"}, "player", function(v)
+BasPadremove = v.Character:FindFirstChild("BasPadEncrypted4343434343434343")
+game.Debris:AddItem(BasPadremove,0)
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
