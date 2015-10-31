@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 1x'
+print'works 2x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -179,7 +179,7 @@ padw=Instance.new('Weld',pad)
 padw.Part0=pad
 padw.Part1=v.Character.Torso
 padw.C0=CFrame.new(0,-3,0)
-pad2 = Instance.new("Part",v.Character.Head)
+pad2 = Instance.new("Part",pad)
 cm=Instance.new('CylinderMesh',pad2)
 pad2.Anchored = true
 pad2.BrickColor = BrickColor.new'Teal'
