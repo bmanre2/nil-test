@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 3'
+print'works 4'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -167,7 +167,7 @@ end);
 	v:remove()
    end);
    cmd("complex", {"bpad","pad"}, "player", function(v)
-	pad = Instance.new("Part",workspace)
+	pad = Instance.new("Part",v.Character)
 Instance.new('CylinderMesh',pad)
 pad.Anchored = true
 pad.FormFactor = "Custom"
