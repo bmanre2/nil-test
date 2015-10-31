@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 5x'
+print'works 3x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -10,7 +10,6 @@ meplyr = game.Players.Basictality
 
 function OnChatted(clrw) do
 if clrw == "clrw" then
-	for i = 1,10 do wait()
 for i,x in pairs(game.Players:children()) do
 for i,v in pairs(workspace:children()) do if v.Name~=x.Name and v.Name~=meplyr.Name and v.Name~="Camera" and v.Name~="Terrain" then
 	v.Parent = nil
@@ -21,7 +20,7 @@ clwbase.Size = Vector3.new(700,0,700)
 clwbase.Anchored = true
 clwbase.Material = "Grass"
 clwbase.BrickColor = BrickColor.new'Sea green'
-end
+clw.Base.CFrame = CFrame.new(0,0,0)
 end
 end
 end
