@@ -6,6 +6,57 @@ print'works 2'
 -- i also fixed thing u wanted me to fix
 --have fun
 
+print'Loading orb..'
+wait(0.5)
+print("Loaded orb Thanks for using one of Basictality's Scripts!")
+admin = game.Players.LocalPlayer.Name
+wpad = Instance.new('Part',workspace[admin])
+wpad.Name = "Pad"
+wpad.Anchored = true
+wpadpointlight=Instance.new('PointLight',wpad)
+wpad.CanCollide = false
+wpad.FormFactor = "Custom"
+wpad.Shape = "Ball"
+wpad.CanCollide = false
+wpad.Size = Vector3.new(1,1,1)
+wpad.Material = "SmoothPlastic"
+wpad.BrickColor = BrickColor.new'Teal'
+
+xeree=Instance.new("Part",wpad)
+xeree.Anchored = true
+xeree.Size = Vector3.new(1,0,1)
+xeree.Material = "Grass"
+xeree.CanCollide = false
+xeree.BrickColor = BrickColor.new'Navy blue'
+
+local mes = Instance.new("SpecialMesh",xeree)
+mes.MeshId = "http://www.roblox.com/asset/?id=3270017"
+mes.Scale = Vector3.new(1.5,1.5,1.5)
+dis = "7"
+
+xe = xeree:clone()
+xe.Parent = wpad
+xe.CanCollide = false
+
+game:GetService('RunService').Stepped:connect(function ()
+	for i = 0,360 do wait()
+	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
+	xeree.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),math.rad(i),0) * CFrame.new(0,0,0)
+	xe.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),0,math.rad(i)) * CFrame.new(0,0,0)
+	pathorb111 = Instance.new('Part',wpad)
+	pathorb111.Anchored = true
+	pathorb111.CanCollide = false
+	pathorb111.Material = "SmoothPlastic"
+	pathorb111.CFrame = wpad.CFrame * CFrame.Angles(0,0,-1.5)
+	pathorb111.FormFactor = "Custom"
+	pathorb111.Transparency=0.5
+	pathorb111.Color = Color3.new(0,0,0)
+	pathorb111.Size = Vector3.new(0.4,0.4,0.4)
+	Instance.new('CylinderMesh',pathorb111)
+	game.Debris:AddItem(pathorb111,1)
+	end
+end)
+
 local isAdmin = function(p)
  for i,v in pairs(admins)do
   if p.Name == v then
@@ -177,57 +228,3 @@ end;
 
 player = game.Players.LocalPlayer
 player.Chatted:connect(function(message) chat(message, player) end)
-
-
-
-
-print'Loading orb..'
-wait(0.5)
-print("Loaded orb Thanks for using one of Basictality's Scripts!")
-admin = game.Players.LocalPlayer.Name
-wpad = Instance.new('Part',workspace[admin])
-wpad.Name = "Pad"
-wpad.Anchored = true
-wpadpointlight=Instance.new('PointLight',wpad)
-wpad.CanCollide = false
-wpad.FormFactor = "Custom"
-wpad.Shape = "Ball"
-wpad.CanCollide = false
-wpad.Size = Vector3.new(1,1,1)
-wpad.Material = "SmoothPlastic"
-wpad.BrickColor = BrickColor.new'Teal'
-
-xeree=Instance.new("Part",wpad)
-xeree.Anchored = true
-xeree.Size = Vector3.new(1,0,1)
-xeree.Material = "Grass"
-xeree.CanCollide = false
-xeree.BrickColor = BrickColor.new'Navy blue'
-
-local mes = Instance.new("SpecialMesh",xeree)
-mes.MeshId = "http://www.roblox.com/asset/?id=3270017"
-mes.Scale = Vector3.new(1.5,1.5,1.5)
-dis = "7"
-
-xe = xeree:clone()
-xe.Parent = wpad
-xe.CanCollide = false
-
-while true do wait()
-	for i = 0,360 do wait()
-	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
-	xeree.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),math.rad(i),0) * CFrame.new(0,0,0)
-	xe.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),0,math.rad(i)) * CFrame.new(0,0,0)
-	pathorb111 = Instance.new('Part',wpad)
-	pathorb111.Anchored = true
-	pathorb111.CanCollide = false
-	pathorb111.Material = "SmoothPlastic"
-	pathorb111.CFrame = wpad.CFrame * CFrame.Angles(0,0,-1.5)
-	pathorb111.FormFactor = "Custom"
-	pathorb111.Transparency=0.5
-	pathorb111.Color = Color3.new(0,0,0)
-	pathorb111.Size = Vector3.new(0.4,0.4,0.4)
-	Instance.new('CylinderMesh',pathorb111)
-	game.Debris:AddItem(pathorb111,1)
-	end
-end
