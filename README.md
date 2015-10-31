@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 4x'
+print'works 10x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -176,9 +176,9 @@ pad.Color = Color3.new(0,0,0)
 for i = 5,500000 do wait()
 padw=Instance.new('Weld',pad)
 padw.Part0=pad
-padw.Part1=v.Character.Torso
-padw.C0=CFrame.new(0,3,0)
 pad2 = Instance.new("Part",pad)
+padw.Part1=pad2
+padw.C0=CFrame.new(0,-1.5,0) ------HERE
 cm=Instance.new('CylinderMesh',pad2)
 pad2.Anchored = true
 pad2.BrickColor = BrickColor.new'Teal'
