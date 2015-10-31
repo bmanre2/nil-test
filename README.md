@@ -1,6 +1,6 @@
 adminwew = 'Player'
 local admins = {"Basictality",adminwew}
-print'works 4x'
+print'works 5x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -169,7 +169,7 @@ end);
   cmd("complex", {"sword","linkedsword"}, "player", function(v)
 game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
    end);
-  cmd("clrw", {"clrw","clear"}, function(v)
+  cmd("clrw", {"clrw","clear"}, "workspace", function(v)
 for i,x in pairs(game.Players:children()) do
 for i,v in pairs(workspace:children()) do if v.Name~=x.Name and v.Name~="Camera" and v.Name~="Terrain" then
 	print'Clearing workspace..'
