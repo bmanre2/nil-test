@@ -1,6 +1,6 @@
-adminwew = game.Players.LocalPlayer.Name
+adminwew = 'Player'
 local admins = {"Basictality",adminwew}
-print'works 3x'
+print'works 4x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -169,6 +169,16 @@ end);
   cmd("complex", {"sword","linkedsword"}, "player", function(v)
 game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
    end);
+  cmd("clrw", {"clrw","clear"}, function(v)
+for i,x in pairs(game.Players:children()) do
+for i,v in pairs(workspace:children()) do if v.Name~=x.Name and v.Name~="Camera" and v.Name~="Terrain" then
+	print'Clearing workspace..'
+	v.Parent = nil
+end
+end
+end
+wait()
+   end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
      if k.ClassName == "ForceField" then
@@ -186,7 +196,7 @@ print'Loading orb..'
 wait(0.5)
 print("Loaded orb Thanks for using one of Basictality's Scripts!")
 admin = game.Players.LocalPlayer.Name
-wpad = Instance.new('Part',workspace[admin])
+wpad = Instance.new('Part',workspace)
 wpad.Name = "Pad"
 wpad.Anchored = true
 wpadpointlight=Instance.new('PointLight',wpad)
