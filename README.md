@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 10x'
+print'works 3x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -184,7 +184,7 @@ pad2.Anchored = true
 pad2.BrickColor = BrickColor.new'Teal'
 pad2.FormFactor = "Custom"
 pad2.Size = Vector3.new(3.3,0,3.3)
-pad2.CFrame = pad.CFrame * CFrame.new(0,-0.1,0)
+pad2.CFrame = v.Torso.CFrame * CFrame.new(0,-3.2,0)
 game.Debris:AddItem(pad2,1)
 end
    end);
