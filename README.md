@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 3'
+print'works 4'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -189,6 +189,7 @@ end
   cmd("complex", {"unpad","nopad"}, "player", function(v)
 BasPadremove = v.Character:FindFirstChild("BasPadEncrypted4343434343434343")
 game.Debris:AddItem(BasPadremove,0)
+BasPadremove:remove()
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
