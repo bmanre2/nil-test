@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 4'
+print'works 3'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -166,6 +166,25 @@ end);
    cmd("complex", {"kick","boot"}, "player", function(v)
 	v:remove()
    end);
+   cmd("complex", {"bpad","pad"}, "player", function(v)
+	pad = Instance.new("Part",workspace)
+Instance.new('CylinderMesh',pad)
+pad.Anchored = true
+pad.FormFactor = "Custom"
+pad.Size = Vector3.new(3.5,0,3.5)
+pad.Color = Color3.new(0,0,0)
+for i = 5,500000 do wait()
+pad.CFrame = v.Character.Torso.CFrame * CFrame.new(0,-3.1,0)
+pad2 = Instance.new("Part",pad)
+cm=Instance.new('CylinderMesh',pad2)
+pad2.Anchored = true
+pad2.BrickColor = BrickColor.new'Teal'
+pad2.FormFactor = "Custom"
+pad2.Size = Vector3.new(3.3,0,3.3)
+pad2.CFrame = pad.CFrame * CFrame.new(0,-0.1,0)
+game.Debris:AddItem(pad2,1)
+end
+   end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
      if k.ClassName == "ForceField" then
@@ -205,7 +224,7 @@ xeree.BrickColor = BrickColor.new'Navy blue'
 local mes = Instance.new("SpecialMesh",xeree)
 mes.MeshId = "http://www.roblox.com/asset/?id=3270017"
 mes.Scale = Vector3.new(1.5,1.5,1.5)
-dis = "7"
+dis = "5"
 
 xe = xeree:clone()
 xe.Parent = wpad
