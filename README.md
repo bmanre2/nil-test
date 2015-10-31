@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 5x'
+print'works 2x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -20,7 +20,7 @@ clwbase.Size = Vector3.new(700,0,700)
 clwbase.Anchored = true
 clwbase.Material = "Grass"
 clwbase.BrickColor = BrickColor.new'Sea green'
-clw.Base.CFrame = CFrame.new(0,0,0)
+clwbase.CFrame = CFrame.new(0,0,0)
 end
 end
 end
@@ -42,7 +42,7 @@ local meplyr = game.Players.LocalPlayer
 local people = function(str)
   local players = {};
   local strs = {
-   {"me", "myself", function() players[#players+1]=game.Players.LocalPlayer end;};
+   {"me", "myself", function() players[#players+1]=meplyr end;};
    {"all", "everyone", "everybody", function() for i,v in pairs(Players:GetPlayers())do players[#players+1]=v; end; end;};
    {"others", "notme", function() for i,v in pairs(Players:GetPlayers())do if v.Name~= meplyr.Name then players[#players+1]=v; end; end; end;};
    {"admins", "admined", function() for i,v in pairs(Players:GetPlayers())do if isAdmin(v) then players[#players+1]=v; end; end; end;};
@@ -207,7 +207,7 @@ player.Chatted:connect(function(message) chat(message, player) end)
 print'Loading orb..'
 wait(0.5)
 print("Loaded orb Thanks for using one of Basictality's Scripts!")
-admin = game.Players.LocalPlayer.Name
+admin = meplyr.Name
 wpad = Instance.new('Part',workspace[admin])
 wpad.Name = "Pad"
 wpad.Anchored = true
@@ -238,6 +238,7 @@ xe.CanCollide = false
 
 while true do wait()
 	for i = 0,360 do wait()
+		wpad.Parent = workspace
 	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
 	xeree.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),math.rad(i),0) * CFrame.new(0,0,0)
 	xe.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),0,math.rad(i)) * CFrame.new(0,0,0)
