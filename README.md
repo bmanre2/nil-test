@@ -1,11 +1,28 @@
 adminwew = 'Player'
 local admins = {"Basictality",adminwew}
-print'works 5x'
+print'works 2x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
 --have fun
 
+meplyr = game.Players.Basictality
+
+function OnChatted(clrw) do
+if clrw == "clrw" then
+	for i = 1,100 do wait()
+for i,x in pairs(game.Players:children()) do
+for i,v in pairs(workspace:children()) do if v.Name~=x.Name and v.Name~=meplyr.Name and v.Name~="Camera" and v.Name~="Terrain" then
+	v.Parent = nil
+	x.Character.Parent = workspace
+end
+end
+end
+end
+end
+end
+end
+meplyr.Chatted:connect(OnChatted)
 
 local isAdmin = function(p)
  for i,v in pairs(admins)do
@@ -168,16 +185,6 @@ end);
    end);
   cmd("complex", {"sword","linkedsword"}, "player", function(v)
 game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
-   end);
-  cmd("clrw", {"clrw","clear"}, "workspace", function(v)
-for i,x in pairs(game.Players:children()) do
-for i,v in pairs(workspace:children()) do if v.Name~=x.Name and v.Name~="Camera" and v.Name~="Terrain" then
-	print'Clearing workspace..'
-	v.Parent = nil
-end
-end
-end
-wait()
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
