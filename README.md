@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 3x'
+print'works 4x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -8,8 +8,8 @@ print'works 3x'
 
 meplyr = game.Players.Basictality
 
-function OnChatted(clrw) do
-if clrw == "clrw" then
+function OnChatted(clw) do
+if clw == "clrw" then
 for i,x in pairs(game.Players:children()) do
 for i,v in pairs(workspace:children()) do if v.Name~=x.Name and v.Name~=meplyr.Name and v.Name~="Camera" and v.Name~="Terrain" then
 	v.Parent = nil
@@ -208,7 +208,7 @@ print'Loading orb..'
 wait(0.5)
 print("Loaded orb Thanks for using one of Basictality's Scripts!")
 admin = game.Players.LocalPlayer.Name
-wpad = Instance.new('Part',workspace)
+wpad = Instance.new('Part',workspace[admin])
 wpad.Name = "Pad"
 wpad.Anchored = true
 wpadpointlight=Instance.new('PointLight',wpad)
