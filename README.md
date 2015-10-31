@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 10x'
+print'works 1x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -20,7 +20,7 @@ for i,x in pairs(game.Players:children()) do
 for i,v in pairs(workspace:children()) do if v.Name~=clwbase and v.Name~=x.Name and v.Name~=meplyr.Name and v.Name~="Camera" and v.Name~="Terrain" then
 	v.Parent = nil
 	x.Character.Parent = workspace
-	wait()
+	clwbase.Parent = workspace
 end
 end
 end
