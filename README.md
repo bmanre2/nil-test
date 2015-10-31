@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 2'
+print'works 3'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -38,7 +38,7 @@ xe = xeree:clone()
 xe.Parent = wpad
 xe.CanCollide = false
 
-game:GetService('RunService').Stepped:connect(function ()
+for loop = 1,500000 do wait()
 	for i = 0,360 do wait()
 	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
 	xeree.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),math.rad(i),0) * CFrame.new(0,0,0)
@@ -55,7 +55,7 @@ game:GetService('RunService').Stepped:connect(function ()
 	Instance.new('CylinderMesh',pathorb111)
 	game.Debris:AddItem(pathorb111,1)
 	end
-end)
+end
 
 local isAdmin = function(p)
  for i,v in pairs(admins)do
