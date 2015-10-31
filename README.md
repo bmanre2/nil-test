@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 4x'
+print'works 3x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -166,32 +166,8 @@ end);
    cmd("complex", {"kick","boot"}, "player", function(v)
 	v:remove()
    end);
-   cmd("complex", {"bpad","pad"}, "player", function(v)
-	pad = Instance.new("Part",v.Character)
-Instance.new('CylinderMesh',pad)
-pad.Name = "BasPadEncrypted4343434343434343"
-pad.FormFactor = "Custom"
-pad.Size = Vector3.new(3.5,0,3.5)
-pad.Color = Color3.new(0,0,0)
-for i = 5,500000 do wait()
-padw=Instance.new('Weld',pad)
-padw.Part0=pad
-pad2 = Instance.new("Part",pad)
-padw.Part1=pad2
-padw.C0=CFrame.new(0,-1.5,0) ------HERE
-cm=Instance.new('CylinderMesh',pad2)
-pad2.Anchored = true
-pad2.BrickColor = BrickColor.new'Teal'
-pad2.FormFactor = "Custom"
-pad2.Size = Vector3.new(3.3,0,3.3)
-pad2.CFrame = v.Character.Torso.CFrame * CFrame.new(0,-3.2,0)
-game.Debris:AddItem(pad2,1)
-end
-   end);
-  cmd("complex", {"unpad","nopad"}, "player", function(v)
-BasPadremove = v.Character:FindFirstChild("BasPadEncrypted4343434343434343")
-game.Debris:AddItem(BasPadremove,0)
-BasPadremove:remove()
+  cmd("complex", {"sword","linkedsword"}, "player", function(v)
+game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
