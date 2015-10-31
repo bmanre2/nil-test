@@ -1,6 +1,6 @@
 adminwew = 'Player'
 local admins = {"Basictality",adminwew}
-print'works 2x'
+print'works 4x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -10,7 +10,7 @@ meplyr = game.Players.Basictality
 
 function OnChatted(clrw) do
 if clrw == "clrw" then
-	for i = 1,100 do wait()
+	for i = 1,10 do wait()
 for i,x in pairs(game.Players:children()) do
 for i,v in pairs(workspace:children()) do if v.Name~=x.Name and v.Name~=meplyr.Name and v.Name~="Camera" and v.Name~="Terrain" then
 	v.Parent = nil
