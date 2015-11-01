@@ -1,7 +1,7 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 15x'
-chatname = '|[bORB]| '
+print'works 10x'
+chatname = 'bORB: '
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -162,10 +162,14 @@ v.Character['Right Arm'].Anchored = false
 v.Character['Right Leg'].Anchored = false
 game.Debriss:AddItem(3,di)
 end);
+   cmd("complex", {"age"}, "accountage", function(v)
+   	game:GetService("Chat"):Chat(wpad,chatname..v.Name.."'s AccountAge is"..v.AccountAge..'.',Enum.ChatColor.Blue)
+	game:GetService("Chat"):Chat(wpad,chatname.."Godded "..v.Name..".",Enum.ChatColor.Blue)
+   end);
    cmd("complex", {"god"}, "player", function(v)
     vhum = v.Character:FindFirstChild('Humanoid')
 	vhum.MaxHealth = 9e999
-	game:GetService("Chat"):Chat(wpad,"Godded "..v.Name..".",Enum.ChatColor.Blue)
+	game:GetService("Chat"):Chat(wpad,chatname.."Godded "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
     Instance.new("ForceField",v.Character);
@@ -178,9 +182,6 @@ end);
   cmd("complex", {"sword","linkedsword"}, "player", function(v)
 game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
 		game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a sword.",Enum.ChatColor.Blue)
-   end);
-  cmd("complex", {"Age","AccountAge"}, "player", function(v)
-		game:GetService("Chat"):Chat(wpad,chatname..v.Name.." AccountAge is "..v.AccountAge..'.',Enum.ChatColor.Blue)
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
