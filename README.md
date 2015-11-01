@@ -1,6 +1,7 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
 print'works 15x'
+chatname = '|[bORB]| '
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -113,19 +114,19 @@ local function chat(msg,plr)
 	explp.BlastRadius = "1";
 	explp.BlastPressure = "500000";
 	explp.Position = v.Character.Torso.Position;
-				game:GetService("Chat"):Chat(wpad,"Exploded "..v.Name..".",Enum.ChatColor.Blue)
+				game:GetService("Chat"):Chat(wpad,chatname.."Exploded "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"ungod"}, "player", function(v)
     vhum1 = v.Character:FindFirstChild('Humanoid')
 	vhum1.MaxHealth = 100
-				game:GetService("Chat"):Chat(wpad,"UnGoded "..v.Name..".",Enum.ChatColor.Blue)
+				game:GetService("Chat"):Chat(wpad,chatname.."UnGoded "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"kill"}, "player", function(v)
     v.Character:BreakJoints();
-	game:GetService("Chat"):Chat(wpad,"killed "..v.Name..".",Enum.ChatColor.Blue)
+	game:GetService("Chat"):Chat(wpad,chatname.."killed "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"freeze"}, "player", function(v)
-	game:GetService("Chat"):Chat(wpad,"Thawed "..v.Name..".",Enum.ChatColor.Blue)
+	game:GetService("Chat"):Chat(wpad,chatname.."Thawed "..v.Name..".",Enum.ChatColor.Blue)
     freezes=Instance.new('Part',v.Character)
 freezes.FormFactor = "Custom"
 freezes.Size = Vector3.new(4.5,6.5,4.5)
@@ -168,20 +169,23 @@ end);
    end);
    cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
     Instance.new("ForceField",v.Character);
-	game:GetService("Chat"):Chat(wpad,"Gave "..v.Name.." a forcefield.",Enum.ChatColor.Blue)
+	game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a forcefield.",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"kick","boot"}, "player", function(v)
 	v:remove()
-		game:GetService("Chat"):Chat(wpad,"kicked "..v.Name.." from the server.",Enum.ChatColor.Blue)
+		game:GetService("Chat"):Chat(wpad,chatname.."kicked "..v.Name.." from the server.",Enum.ChatColor.Blue)
    end);
   cmd("complex", {"sword","linkedsword"}, "player", function(v)
 game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
-		game:GetService("Chat"):Chat(wpad,"Gave "..v.Name.." a sword.",Enum.ChatColor.Blue)
+		game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a sword.",Enum.ChatColor.Blue)
+   end);
+  cmd("complex", {"Age","AccountAge"}, "player", function(v)
+		game:GetService("Chat"):Chat(wpad,chatname..v.Name.." AccountAge is "..v.AccountAge..'.',Enum.ChatColor.Blue)
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
      if k.ClassName == "ForceField" then
-			game:GetService("Chat"):Chat(wpad,"Taken "..v.Name.." forcefield away.",Enum.ChatColor.Blue)
+			game:GetService("Chat"):Chat(wpad,chatname.."Taken "..v.Name.." forcefield away.",Enum.ChatColor.Blue)
       k:Destroy();
      end;
     end;
@@ -207,7 +211,7 @@ wpad.CanCollide = false
 wpad.Size = Vector3.new(1,1,1)
 wpad.Material = "SmoothPlastic"
 wpad.BrickColor = BrickColor.new'Teal'
-game:GetService("Chat"):Chat(wpad,"Welcome "..meplyr.Name..", there is currently no prefix!",Enum.ChatColor.Blue)
+game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", there is currently no prefix!",Enum.ChatColor.Blue)
 
 xeree=Instance.new("Part",wpad)
 xeree.Anchored = true
