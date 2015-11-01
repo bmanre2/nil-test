@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 5x'
+print'works 10x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -160,19 +160,24 @@ end);
    cmd("complex", {"god"}, "player", function(v)
     vhum = v.Character:FindFirstChild('Humanoid')
 	vhum.MaxHealth = 9e999
+	game:GetService("Chat"):Chat(wpad,"Godded "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
     Instance.new("ForceField",v.Character);
+	game:GetService("Chat"):Chat(wpad,"Gave "..v.Name.." a forcefield.",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"kick","boot"}, "player", function(v)
 	v:remove()
+		game:GetService("Chat"):Chat(wpad,"kicked "..v.Name.." from the server.",Enum.ChatColor.Blue)
    end);
   cmd("complex", {"sword","linkedsword"}, "player", function(v)
 game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
+		game:GetService("Chat"):Chat(wpad,"Gave "..v.Name.." a sword.",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
      if k.ClassName == "ForceField" then
+			game:GetService("Chat"):Chat(wpad,"Taken "..v.Name.." forcefield away.",Enum.ChatColor.Blue)
       k:Destroy();
      end;
     end;
