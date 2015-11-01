@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 10x'
+print'works 15x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -113,15 +113,19 @@ local function chat(msg,plr)
 	explp.BlastRadius = "1";
 	explp.BlastPressure = "500000";
 	explp.Position = v.Character.Torso.Position;
+				game:GetService("Chat"):Chat(wpad,"Exploded "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"ungod"}, "player", function(v)
     vhum1 = v.Character:FindFirstChild('Humanoid')
 	vhum1.MaxHealth = 100
+				game:GetService("Chat"):Chat(wpad,"UnGoded "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"kill"}, "player", function(v)
     v.Character:BreakJoints();
+	game:GetService("Chat"):Chat(wpad,"killed "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"freeze"}, "player", function(v)
+	game:GetService("Chat"):Chat(wpad,"Thawed "..v.Name..".",Enum.ChatColor.Blue)
     freezes=Instance.new('Part',v.Character)
 freezes.FormFactor = "Custom"
 freezes.Size = Vector3.new(4.5,6.5,4.5)
@@ -203,7 +207,7 @@ wpad.CanCollide = false
 wpad.Size = Vector3.new(1,1,1)
 wpad.Material = "SmoothPlastic"
 wpad.BrickColor = BrickColor.new'Teal'
-game:GetService("Chat"):Chat(wpad,"Welcome, "..meplyr.Name.."!",Enum.ChatColor.Blue)
+game:GetService("Chat"):Chat(wpad,"Welcome "..meplyr.Name..", there is currently no prefix!",Enum.ChatColor.Blue)
 
 xeree=Instance.new("Part",wpad)
 xeree.Anchored = true
