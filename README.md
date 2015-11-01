@@ -1,6 +1,6 @@
   adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 10x'
+print'works 30x'
 chatname = '[bOrb]: '
 OrbName = "bOrb"
 --prefix is nil
@@ -230,6 +230,8 @@ xe.CanCollide = false
 end
 
 Spawnorb()
+
+wpad.Changed:connect(function() if not workspace:FindFirstChild(wpadmod.bOrb) then Spawnorb() end end)
 
 while true do wait()
 	for i = 0,360 do wait()
