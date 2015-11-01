@@ -1,8 +1,8 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 10x'
+print'works 5x'
 chatname = '[bOrb]: '
-OrbName = "bORB v.1"
+OrbName = "bOrb"
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -200,13 +200,8 @@ print("Loaded orb Thanks for using one of Basictality's Scripts!")
 admin = meplyr.Name
 wpadmod=Instance.new('Model',workspace[admin])
 wpadmod.Name = player.Name.."'s "..OrbName
-wpadhum=Instance.new('Humanoid',wpadmod)
-wpadhum.MaxHealth = 0
-wpadhum.Health = 0
 wpad=Instance.new('Part',wpadmod)
-wpad.Name = "Head"
-wpadhum.MaxHealth = 0
-wpadhum.Health = 0
+wpad.Name = "bOrb"
 wpad.Anchored = true
 wpadpointlight=Instance.new('PointLight',wpad)
 wpad.CanCollide = false
