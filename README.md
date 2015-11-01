@@ -1,7 +1,7 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
 print'works 10x'
-chatname = 'bORB: '
+chatname = 'bOrb: '
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
