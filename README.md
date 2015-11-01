@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 10x'
+print'works 15x'
 chatname = '[bOrb]: '
 OrbName = "bORB v.1"
 --prefix is nil
@@ -199,12 +199,12 @@ wait(0.5)
 print("Loaded orb Thanks for using one of Basictality's Scripts!")
 admin = meplyr.Name
 wpadmod=Instance.new('Model',workspace[admin])
-wpadmod.Name = player.Name.."'s "..OrbName
 wpad = Instance.new('Part',wpadmod)
+wpad.Name = "Head"
+wpadmod.Name = player.Name.."'s "..OrbName
 wpadhum=Instance.new('Humanoid',wpadmod)
 wpadhum.MaxHealth = 0
 wpadhum.Health = 0
-wpad.Name = "Head"
 wpad.Anchored = true
 wpadpointlight=Instance.new('PointLight',wpad)
 wpad.CanCollide = false
