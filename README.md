@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 10x'
+print'works 12x'
 chatname = '[bOrb]: '
 --prefix is nil
 -- so use kill whatever to kill anyone
@@ -163,8 +163,11 @@ v.Character['Right Leg'].Anchored = false
 game.Debriss:AddItem(3,di)
 end);
    cmd("complex", {"age"}, "accountage", function(v)
+	print'Getting accont age..'
+	wait()
+	print'Got AcountAge!'
+	wait()
    	game:GetService("Chat"):Chat(wpad,chatname..v.Name.."'s AccountAge is"..v.AccountAge..'.',Enum.ChatColor.Blue)
-	game:GetService("Chat"):Chat(wpad,chatname.."Godded "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"god"}, "player", function(v)
     vhum = v.Character:FindFirstChild('Humanoid')
