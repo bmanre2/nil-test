@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 10x'
+print'works 15x'
 chatname = '[bOrb]: '
 OrbName = "bOrb"
 --prefix is nil
@@ -240,7 +240,7 @@ while true do wait()
 	pathorb111.Anchored = true
 	pathorb111.CanCollide = false
 	pathorb111.Material = "SmoothPlastic"
-	pathorb111.CFrame = wpad.CFrame * CFrame.Angles(0,0,-1.5)
+	pathorb111.CFrame = wpad.CFrame.magnitude * CFrame.Angles(0,0,-1.5)
 	pathorb111.FormFactor = "Custom"
 	pathorb111.Transparency=0.5
 	pathorb111.Color = Color3.new(0,0,0)
