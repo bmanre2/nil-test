@@ -1,6 +1,6 @@
   adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 30x'
+print'works 20x'
 chatname = '[bOrb]: '
 OrbName = "bOrb"
 --prefix is nil
