@@ -52,10 +52,10 @@ local people = function(str)
 --    end
 local function chat(msg,plr)
   if isAdmin(plr) then
-   local pre = ";";
-   local post = " ";
-   if msg:find(" ") == nil then --change to '~= nil'
-    pre = msg:sub(1,msg:find(";")-1);
+   local pre = "";
+   local post = "";
+   if msg:find(" ") ~= nil then
+    pre = msg:sub(1,msg:find(" ")-1);
     post = msg:sub(msg:find(" ")+1);
    end;
    local cmd = function(ct, s, pt, f)
@@ -212,7 +212,7 @@ wpad.CanCollide = false
 wpad.Size = Vector3.new(1,1,1)
 wpad.Material = "SmoothPlastic"
 wpad.BrickColor = BrickColor.new'Teal'
-game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is ';'",Enum.ChatColor.Blue)
+game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is  none!",Enum.ChatColor.Blue)
 
 xeree=Instance.new("Part",wpad)
 xeree.Anchored = true
