@@ -1,4 +1,4 @@
-adminwew = game.Players.LocalPlayer.Name
+  adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
 print'works 10x'
 chatname = '[bOrb]: '
@@ -194,12 +194,12 @@ end;
 
 player = game.Players.LocalPlayer
 player.Chatted:connect(function(message) chat(message, player) end)
-
+function Spawnorb()
 print'Loading orb..'
 wait(0.5)
 print("Loaded orb Thanks for using one of Basictality's Scripts!")
 admin = meplyr.Name
-wpadmod=Instance.new('Model',workspace[admin])
+wpadmod=Instance.new('Model',workspace)
 wpadmod.Name = player.Name.."'s "..OrbName
 wpad=Instance.new('Part',wpadmod)
 wpad.Name = "bOrb"
@@ -213,6 +213,15 @@ wpad.Size = Vector3.new(1,1,1)
 wpad.Material = "SmoothPlastic"
 wpad.BrickColor = BrickColor.new'Teal'
 game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is  none!",Enum.ChatColor.Blue)
+end
+
+Spawnorb()
+   wpad.Changed:connect(function()
+                if not workspace:FindFirstChild(wpadmod.wpad.Name) then
+                        Spawnorb()
+                end
+        end)
+
 
 xeree=Instance.new("Part",wpad)
 xeree.Anchored = true
@@ -232,7 +241,6 @@ xe.CanCollide = false
 
 while true do wait()
 	for i = 0,360 do wait()
-		wpad.Parent = workspace
 	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
 	xeree.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),math.rad(i),0) * CFrame.new(0,0,0)
 	xe.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),0,math.rad(i)) * CFrame.new(0,0,0)
