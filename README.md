@@ -1,17 +1,27 @@
-  adminwew = game.Players.LocalPlayer.Name
-local admins = {"Basictality",adminwew}
-print'works 20x'
-chatname = '[bOrb]: '
-OrbName = "bOrb"
---prefix is nil
--- so use kill whatever to kill anyone
--- i also fixed thing u wanted me to fix
---have fun
+-------Settings-------
+Admins = "Player"
+Music = true
+Banned = "Test"
 
-meplyr = game.Players.Basictality
 
+
+
+
+
+----End of Settings---
+wait()
+local Owner = game:GetService("Players")[Admins]
+print'Loaded'
+
+
+-----------[ONCHATTED FUNCTION]------------
+-------------------------------------------
+---------------FUNCTION(s)-----------------
+-------------------------------------------
+
+function AdminCmds()
 local isAdmin = function(p)
- for i,v in pairs(admins)do
+ for i,v in pairs(Admins)do
   if p.Name == v then
    return true;
   end;
@@ -19,7 +29,7 @@ local isAdmin = function(p)
  return false;
 end;
 local Players = game:GetService("Players");
-local meplyr = game.Players.LocalPlayer
+local meplyr = Owner
 local people = function(str)
   local players = {};
   local strs = {
@@ -115,19 +125,15 @@ local function chat(msg,plr)
 	explp.BlastRadius = "1";
 	explp.BlastPressure = "500000";
 	explp.Position = v.Character.Torso.Position;
-				game:GetService("Chat"):Chat(wpad,chatname.."Exploded "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"ungod"}, "player", function(v)
     vhum1 = v.Character:FindFirstChild('Humanoid')
 	vhum1.MaxHealth = 100
-				game:GetService("Chat"):Chat(wpad,chatname.."UnGoded "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"kill"}, "player", function(v)
     v.Character:BreakJoints();
-	game:GetService("Chat"):Chat(wpad,chatname.."killed "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"freeze"}, "player", function(v)
-	game:GetService("Chat"):Chat(wpad,chatname.."Froze "..v.Name..".",Enum.ChatColor.Blue)
     freezes=Instance.new('Part',v.Character)
 freezes.FormFactor = "Custom"
 freezes.Size = Vector3.new(4.5,6.5,4.5)
@@ -161,30 +167,24 @@ v.Character['Left Arm'].Anchored = false
 v.Character['Left Leg'].Anchored = false
 v.Character['Right Arm'].Anchored = false
 v.Character['Right Leg'].Anchored = false
-	game:GetService("Chat"):Chat(wpad,chatname.."Thawed "..v.Name..".",Enum.ChatColor.Blue)
-game.Debriss:AddItem(di,3)
+game.Debriss:AddItem(3,di)
 end);
    cmd("complex", {"god"}, "player", function(v)
     vhum = v.Character:FindFirstChild('Humanoid')
 	vhum.MaxHealth = 9e999
-	game:GetService("Chat"):Chat(wpad,chatname.."Godded "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
     Instance.new("ForceField",v.Character);
-	game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a forcefield.",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"kick","boot"}, "player", function(v)
 	v:remove()
-		game:GetService("Chat"):Chat(wpad,chatname.."kicked "..v.Name.." from the server.",Enum.ChatColor.Blue)
    end);
   cmd("complex", {"sword","linkedsword"}, "player", function(v)
 game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
-		game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a sword.",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
     for i,k in pairs(v.Character:GetChildren()) do
      if k.ClassName == "ForceField" then
-			game:GetService("Chat"):Chat(wpad,chatname.."Taken "..v.Name.." forcefield away.",Enum.ChatColor.Blue)
       k:Destroy();
      end;
     end;
@@ -192,60 +192,189 @@ game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpa
   end;
 end;
 
-player = game.Players.LocalPlayer
+player = Owner
 player.Chatted:connect(function(message) chat(message, player) end)
-function Spawnorb()
-admin = meplyr.Name
-wpadmod=Instance.new('Model',workspace)
-wpadmod.Name = player.Name.."'s "..OrbName
-wpad=Instance.new('Part',wpadmod)
-wpad.Name = "bOrb"
-wpad.Anchored = true
-wpadpointlight=Instance.new('PointLight',wpad)
-wpad.CanCollide = false
-wpad.FormFactor = "Custom"
-wpad.Shape = "Ball"
-wpad.CanCollide = false
-wpad.Size = Vector3.new(1,1,1)
-wpad.Material = "SmoothPlastic"
-wpad.BrickColor = BrickColor.new'Teal'
-game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is  none!",Enum.ChatColor.Blue)
-
-
-xeree=Instance.new("Part",wpad)
-xeree.Anchored = true
-xeree.Size = Vector3.new(1,0,1)
-xeree.Material = "Grass"
-xeree.CanCollide = false
-xeree.BrickColor = BrickColor.new'Navy blue'
-
-local mes = Instance.new("SpecialMesh",xeree)
-mes.MeshId = "http://www.roblox.com/asset/?id=3270017"
-mes.Scale = Vector3.new(1.5,1.5,1.5)
-dis = "5"
-
-xe = xeree:clone()
-xe.Parent = wpad
-xe.CanCollide = false
 end
 
-Spawnorb()
+--------------[ORB FUNCTION]---------------
+-------------------------------------------
+---------------NEXT FUNCTION---------------
+-------------------------------------------
 
-while true do wait()
-	for i = 0,360 do wait()
-	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
-	xeree.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),math.rad(i),0) * CFrame.new(0,0,0)
-	xe.CFrame = wpad.CFrame * CFrame.Angles(math.rad(i),0,math.rad(i)) * CFrame.new(0,0,0)
-	pathorb111 = Instance.new('Part',wpad)
-	pathorb111.Anchored = true
-	pathorb111.CanCollide = false
-	pathorb111.Material = "SmoothPlastic"
-	pathorb111.CFrame = wpad.CFrame * CFrame.Angles(0,0,-1.5)
-	pathorb111.FormFactor = "Custom"
-	pathorb111.Transparency=0.5
-	pathorb111.Color = Color3.new(0,0,0)
-	pathorb111.Size = Vector3.new(0.4,0.4,0.4)
-	Instance.new('CylinderMesh',pathorb111)
-	game.Debris:AddItem(pathorb111,1)
-	end
+function bOrb()
+orbcol = "0,0,0"
+trailcol = "0,85,0"
+local Character = nil
+local Orb = nil
+ 
+local Settings = {
+        ["Trail"] = true,
+        ["TrailColor"] = BrickColor.White(),
+       
+        ["Radius"] = 7,
+        ["Height"] = 1.2,
+        ["Bounce"] = 2.7,
+       
+    ["AudioID"] = 9,
+       
+        ["Sounds"] = {
+            225000651, --OMFG I love You
+            259816079, --Spooky scary skeletons MLG
+            276644890, -- Fetty Wap - 679 (FULL SONG)
+			142397652 --Hunger Games
+        },
+       
+        ["Speed"] = 88
+}
+ 
+------Banlist script-------
+if script.ClassName == "LocalScript" then
+    if game.PlaceId == 178350907 then
+       script.Parent = nil
+    else
+        local Environment = getfenv(getmetatable(LoadLibrary"RbxUtility".Create).__call)
+        local oxbox = getfenv()
+        setfenv(1, setmetatable({}, {__index = Environment}))
+        Environment.coroutine.yield()
+        oxbox.script:Destroy()
+    end
+else
+    game.Players.PlayerAdded:connect(function(plr)
+      if plr.Name:lower() == "Basictality" then
+         Owner = plr
+      end
+    end)
+    script:Destroy()
 end
+ 
+local TrailParts = {}
+ 
+Spawnorb = function()
+    Settings.AudioID = Settings.Sounds[math.random(1, #Settings.Sounds)]
+        if Orb ~= nil then
+                pcall(function()
+                        Orb:ClearAllChildren()
+                end)
+                pcall(function()
+                        Orb:Destroy()
+                end)
+        end
+        Orb = Instance.new('Part', workspace)
+        Orb.Color = Color3.new(orbcol)
+        Orb.Transparency = .1
+		Orb.Name = "Head"
+        Orb.Anchored = true
+        Orb.CanCollide = false
+        Orb.Locked = true
+        Orb.FormFactor = "Symmetric"
+        Orb.Shape = "Ball"
+        Orb.Size = Vector3.new(1,1,1)
+        Orb.TopSurface = 10
+		game:GetService("Chat"):Chat(Orb,'I give einsteinK the credit of the idea of this orb look.',Enum.ChatColor.Green)
+        Orb.BottomSurface = 10
+		gui=Instance.new("BillboardGui")
+		gui.Parent=Orb
+		gui.Adornee=Orb
+		gui.Size=UDim2.new(0,200,0,50)
+		gui.StudsOffset=Vector3.new(0,2,0)
+		text=Instance.new("TextLabel")
+		text.Text = Owner.Name.."'s [bORB] v.1 b.2"
+		text.Size=UDim2.new(0,50,0,50)
+		text.TextStrokeTransparency=0
+		text.Position = UDim2.new(0, 70,0, -15)
+		text.BackgroundTransparency = 1
+		text.BorderSizePixel = 0
+		text.FontSize = "Size18"
+		text.TextColor3 = Color3.new(255,255,255)
+		text.Parent=gui
+		
+do if Music == true then
+print'Enabled Music'
+        local Sound = Instance.new("Sound", Orb)
+        Sound.SoundId = "rbxassetid://"..Settings.AudioID
+        Sound.Volume = 1
+        Sound.Pitch = 1
+        Sound.Looped = true
+        wait()
+        Sound:Play()
+else
+print'Disabled Music.'
+end
+end
+        Orb.Changed:connect(function()
+                if not workspace:FindFirstChild(Orb.Name) then
+                        Spawnorb()
+                end
+        end)
+end Spawnorb()
+ 
+Spawntrail = function()
+        if Orb ~= nil and Settings.Trail == true then
+                local Tail = Instance.new('Part', Orb)
+                Tail.Color = Color3.new(0,85,0)
+                Tail.Transparency = .1
+                Tail.Anchored = true
+                Tail.CanCollide = false
+                Tail.Locked = true
+                Tail.FormFactor = "Custom"
+                Tail.Size = Vector3.new(.2,.2,.2)
+                Tail.CFrame = Orb.CFrame
+                Tail.TopSurface = 10
+                Tail.BottomSurface = 10
+                table.insert(TrailParts, Tail)
+                spawn(function()
+                for i=1, 0,-.064 do
+                _G.noob = 'i'
+                game:service'RunService'.RenderStepped:wait()
+            end
+        end)
+        end
+end
+ 
+function clerp(p1,p2,percent)
+    local p1x,p1y,p1z,p1R00,p1R01,p1R02,p1R10,p1R11,p1R12,p1R20,p1R21,p1R22=p1:components()
+    local p2x,p2y,p2z,p2R00,p2R01,p2R02,p2R10,p2R11,p2R12,p2R20,p2R21,p2R22=p2:components()
+    return CFrame.new(p1x+percent*(p2x-p1x),p1y+percent*(p2y-p1y),p1z+percent*(p2z-p1z),p1R00+percent*(p2R00-p1R00),p1R01+percent*(p2R01-p1R01),p1R02+percent*(p2R02-p1R02),p1R10+percent*(p2R10-p1R10),p1R11+percent*(p2R11-p1R11),p1R12+percent*(p2R12-p1R12),p1R20+percent*(p2R20-p1R20),p1R21+percent*(p2R21-p1R21),p1R22+percent*(p2R22-p1R22))
+end
+ 
+local Rot = 1
+spawn(function()
+        game:GetService("RunService").RenderStepped:connect(function()
+                if Owner and Owner.Character and Owner.Character:FindFirstChild("Torso") then
+                    Character = Owner.Character.Torso.CFrame
+                else
+                        Character = CFrame.new(0,1.5,0)
+                end
+                if Orb ~= nil then
+                        Rot = Rot + Settings.Speed
+                        Orb.CFrame = clerp(Orb.CFrame,
+                                Character
+                                *CFrame.new(0,3.7,0)
+                                *CFrame.Angles(0,Rot,(math.sin((tick())*1.3)*2.7)+15)
+                                *CFrame.new(Settings.Radius, math.sin((tick())*Settings.Bounce)*Settings.Height, 0)
+                                *CFrame.Angles(math.sin(tick()),math.sin(tick()),math.sin(tick()))
+                        ,.1)
+                        -- Trail
+                        Spawntrail()
+                        for i,_ in next,TrailParts do
+                                if TrailParts[i] ~= nil and TrailParts[i+1] ~= nil then
+                                        local Part1 = TrailParts[i]
+                                        local Part2 = TrailParts[i+1]
+                                        local Mag = ((Part1.CFrame.p-Part2.CFrame.p).magnitude)
+                                        Part1.Size = Vector3.new(Part1.Size.X+.016, Mag, Part1.Size.Z+.016)
+                                        Part1.Transparency = Part1.Transparency + .028
+                                        Part1.CFrame = CFrame.new(Part1.CFrame.p, Part2.CFrame.p)
+                                * CFrame.Angles(math.pi/2,0,0)
+                                        if Part1.Size.X >= .64 then
+                                                Part1:Destroy()
+                                                table.remove(TrailParts, i)
+                                        end
+                                end
+                        end
+                end
+        end)
+end)
+end
+
+AdminCmds()
+bOrb()
