@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 10x'
+print'works 5x'
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -198,6 +198,7 @@ wpad.CanCollide = false
 wpad.Size = Vector3.new(1,1,1)
 wpad.Material = "SmoothPlastic"
 wpad.BrickColor = BrickColor.new'Teal'
+game:GetService("Chat"):Chat(wpad,"Welcome, "..meplyr.Name.."!",Enum.ChatColor.Blue)
 
 xeree=Instance.new("Part",wpad)
 xeree.Anchored = true
