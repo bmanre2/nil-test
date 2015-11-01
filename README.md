@@ -1,7 +1,7 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 10x'
-chatname = 'bOrb: '
+print'works 15x'
+chatname = '[bOrb]: '
 --prefix is nil
 -- so use kill whatever to kill anyone
 -- i also fixed thing u wanted me to fix
@@ -52,7 +52,7 @@ local people = function(str)
 --    end
 local function chat(msg,plr)
   if isAdmin(plr) then
-   local pre = "";
+   local pre = ";";
    local post = "";
    if msg:find(" ") ~= nil then
     pre = msg:sub(1,msg:find(" ")-1);
@@ -212,7 +212,7 @@ wpad.CanCollide = false
 wpad.Size = Vector3.new(1,1,1)
 wpad.Material = "SmoothPlastic"
 wpad.BrickColor = BrickColor.new'Teal'
-game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", there is currently no prefix!",Enum.ChatColor.Blue)
+game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is ';'!",Enum.ChatColor.Blue)
 
 xeree=Instance.new("Part",wpad)
 xeree.Anchored = true
