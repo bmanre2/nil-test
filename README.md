@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 15x'
+print'works 5x'
 chatname = '[bOrb]: '
 OrbName = "bORB v.1"
 --prefix is nil
@@ -203,6 +203,10 @@ wpad = Instance.new('Part',wpadmod)
 wpad.Name = "Head"
 wpadmod.Name = player.Name.."'s "..OrbName
 wpadhum=Instance.new('Humanoid',wpadmod)
+wpadhum.MaxHealth = 0
+wpadhum.Health = 0
+wpad = Instance.new('Part',wpadmod)
+wpad.Name = "Head"
 wpadhum.MaxHealth = 0
 wpadhum.Health = 0
 wpad.Anchored = true
