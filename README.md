@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 5x'
+print'works 10x'
 chatname = '[bOrb]: '
 OrbName = "bOrb"
 --prefix is nil
@@ -127,7 +127,7 @@ local function chat(msg,plr)
 	game:GetService("Chat"):Chat(wpad,chatname.."killed "..v.Name..".",Enum.ChatColor.Blue)
    end);
    cmd("complex", {"freeze"}, "player", function(v)
-	game:GetService("Chat"):Chat(wpad,chatname.."Thawed "..v.Name..".",Enum.ChatColor.Blue)
+	game:GetService("Chat"):Chat(wpad,chatname.."Froze "..v.Name..".",Enum.ChatColor.Blue)
     freezes=Instance.new('Part',v.Character)
 freezes.FormFactor = "Custom"
 freezes.Size = Vector3.new(4.5,6.5,4.5)
@@ -161,7 +161,8 @@ v.Character['Left Arm'].Anchored = false
 v.Character['Left Leg'].Anchored = false
 v.Character['Right Arm'].Anchored = false
 v.Character['Right Leg'].Anchored = false
-game.Debriss:AddItem(3,di)
+	game:GetService("Chat"):Chat(wpad,chatname.."Thawed "..v.Name..".",Enum.ChatColor.Blue)
+game.Debriss:AddItem(di,3)
 end);
    cmd("complex", {"god"}, "player", function(v)
     vhum = v.Character:FindFirstChild('Humanoid')
