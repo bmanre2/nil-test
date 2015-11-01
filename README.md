@@ -1,6 +1,6 @@
 adminwew = game.Players.LocalPlayer.Name
 local admins = {"Basictality",adminwew}
-print'works 15x'
+print'works 10x'
 chatname = '[bOrb]: '
 --prefix is nil
 -- so use kill whatever to kill anyone
@@ -54,7 +54,7 @@ local function chat(msg,plr)
   if isAdmin(plr) then
    local pre = ";";
    local post = " ";
-   if msg:find(";") ~= nil then --change to ' '
+   if msg:find(" ") == nil then --change to '~= nil'
     pre = msg:sub(1,msg:find(";")-1);
     post = msg:sub(msg:find(" ")+1);
    end;
