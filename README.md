@@ -233,6 +233,8 @@ Spawnorb()
  
  while true do wait()
  	for i = 0,360 do wait()
+	 xeree.CFrame = CFrame.new(wpad.Position)* CFrame.new(0,0,0)
+	xe.CFrame = CFrame.new(wpad.Position)* CFrame.new(0,0,0)
  	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
 end
 end
