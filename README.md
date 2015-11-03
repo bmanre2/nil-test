@@ -8,7 +8,7 @@
  -- i also fixed thing u wanted me to fix
  --have fun
  
- meplyr = game.Players.LocalPlayer
+ meplyr = game.Players.Basictality
  
  local isAdmin = function(p)
   for i,v in pairs(admins)do
@@ -229,10 +229,8 @@
  xe.CanCollide = false
  end
  
- Spawnorb()
- 
--wpad.Changed:connect(function() if not workspace:FindFirstChild(wpadmod.bOrb) then Spawnorb() end end)
--
  while true do wait()
  	for i = 0,360 do wait()
  	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
+end
+end
