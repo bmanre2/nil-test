@@ -228,6 +228,8 @@
  xe.Parent = wpad
  xe.CanCollide = false
  end
+
+Spawnorb()
  
  while true do wait()
  	for i = 0,360 do wait()
