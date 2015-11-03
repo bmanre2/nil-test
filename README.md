@@ -8,7 +8,7 @@
  -- i also fixed thing u wanted me to fix
  --have fun
  
- meplyr = game.Players.Basictality
+ meplyr = game.Players.LocalPlayer
  
  local isAdmin = function(p)
   for i,v in pairs(admins)do
