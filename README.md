@@ -237,6 +237,7 @@ Spawnorb()
 do if wpad.Parent~=workspace then
 Spawnorb()
 end
+end
 print'test'
 ----------------------------------------------------------------------------------
  while true do wait()
