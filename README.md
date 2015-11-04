@@ -227,7 +227,7 @@ end)
  wpad.Size = Vector3.new(1,1,1)
  wpad.Material = "SmoothPlastic"
  wpad.BrickColor = BrickColor.new'Teal'
-game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is  none!",Enum.ChatColor.Blue)
+game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is [none]!",Enum.ChatColor.Blue)
  end
 
 Spawnorb()
