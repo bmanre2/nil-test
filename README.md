@@ -179,6 +179,8 @@ dis = "7"
  		game:GetService("Chat"):Chat(wpad,chatname.."Unbanished "..v.Name.." from the server.",Enum.ChatColor.Blue)
     end);
     cmd("complex", {"ban","banish"}, "player", function(v)
+	banvaluefind=game.Players:FindFirstChild(banvalue.Name)
+	banvaluefind:remove()
  	banvalue=Instance.new('StringValue',game.Players)
 	banvalue.Value = v.Name
 	banvalue.Name = 'Banned'..v.Name
