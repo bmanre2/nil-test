@@ -188,10 +188,10 @@ dis = "7"
     end);
    end;
  end;
-----------------------------------------------------------------------------------
  
- player = game.Players.LocalPlayer
+ player = meplyr
  player.Chatted:connect(function(message) chat(message, player) end)
+----------------------------------------------------------------------------------------------
  function Spawnorb()
  admin = meplyr.Name
  wpadmod=Instance.new('Model',workspace)
