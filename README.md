@@ -4,7 +4,7 @@ adminwew = game.Players.LocalPlayer.Name
  OrbName = "bOrb"
 dis = "7"
 ----------------------------------------------------------------------------------------------
-  print'works 10x'
+  print'works 15x'
  meplyr = game.Players.LocalPlayer
 
  local isAdmin = function(p)
@@ -113,44 +113,6 @@ dis = "7"
  	explp.Position = v.Character.Torso.Position;
  				game:GetService("Chat"):Chat(wpad,chatname.."Exploded "..v.Name..".",Enum.ChatColor.Blue)
     end);
-    cmd("complex", {"jail"}, "jail", function(v)
-jailp=Instance.new('Model',v.Character)
-jailp.Name = v.Name.."'s Jail"
-jailp1=Instance.new('Part',workspace)
-jailp1.FormFactor = "Custom"
-jailp1.Anchored = true
-jailp1.Material = "Neon"
-jailp1.Size = Vector3.new(5,0.2,5)
-jailp1.BrickColor = BrickColor.new'Teal'
-jailp1.CFrame = v.Character.Torso.CFrame * CFrame.new(0,-3,0)
-
-jailp2=Instance.new('Part',jailp1)
-jailp2.FormFactor = "Custom"
-jailp2.Anchored = true
-jailp2.Color = Color3.new(0,0,0)
-jailp2.Transparency=0.5
-jailp2.Material = "Neon"
-jailp2.Size = Vector3.new(5, 7, 0)
-jailp2.CFrame = jailp1.CFrame * CFrame.new(0,3.6,2.4)
-
-jailp3=jailp2:clone()
-jailp3.Parent = jailp1
-jailp3.CFrame = jailp1.CFrame * CFrame.new(0,3.6,-2.4)
-
-jailp4=jailp1:clone()
-jailp4.Parent = jailp1
-jailp4.CFrame = jailp1.CFrame * CFrame.new(0,7.2,0)
-
-jailp5=jailp2:clone()
-jailp5.Parent = jailp1
-jailp5.Size = Vector3.new(0, 7, 5)
-jailp5.CFrame = jailp1.CFrame * CFrame.new(2.4,3.6,0)
-
-jailp6=jailp5:clone()
-jailp6.Parent = jailp1
-jailp5.CFrame = jailp1.CFrame * CFrame.new(-2.4,3.6,0)
- 				game:GetService("Chat"):Chat(wpad,chatname.."Jailed "..v.Name..".",Enum.ChatColor.Blue)
-    end);
     cmd("complex", {"ungod"}, "player", function(v)
      vhum1 = v.Character:FindFirstChild('Humanoid')
  	vhum1.MaxHealth = 100
@@ -232,6 +194,44 @@ end)
    cmd("complex", {"sword","linkedsword"}, "player", function(v)
  game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
  		game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a sword.",Enum.ChatColor.Blue)
+    end);
+   cmd("complex", {"jail","jailed"}, "player", function(v)
+jailp=Instance.new('Model',workspace)
+jailp.Name = v.Name.."'s Jail"
+jailp1=Instance.new('Part',workspace)
+jailp1.FormFactor = "Custom"
+jailp1.Anchored = true
+jailp1.Material = "Neon"
+jailp1.Size = Vector3.new(5,0.2,5)
+jailp1.BrickColor = BrickColor.new'Teal'
+jailp1.CFrame = v.Character.Torso.CFrame * CFrame.new(0,-3,0)
+
+jailp2=Instance.new('Part',jailp1)
+jailp2.FormFactor = "Custom"
+jailp2.Anchored = true
+jailp2.Color = Color3.new(0,0,0)
+jailp2.Transparency=0.5
+jailp2.Material = "Neon"
+jailp2.Size = Vector3.new(5, 7, 0)
+jailp2.CFrame = jailp1.CFrame * CFrame.new(0,3.6,2.4)
+
+jailp3=jailp2:clone()
+jailp3.Parent = jailp1
+jailp3.CFrame = jailp1.CFrame * CFrame.new(0,3.6,-2.4)
+
+jailp4=jailp1:clone()
+jailp4.Parent = jailp1
+jailp4.CFrame = jailp1.CFrame * CFrame.new(0,7.2,0)
+
+jailp5=jailp2:clone()
+jailp5.Parent = jailp1
+jailp5.Size = Vector3.new(0, 7, 5)
+jailp5.CFrame = jailp1.CFrame * CFrame.new(2.4,3.6,0)
+
+jailp6=jailp5:clone()
+jailp6.Parent = jailp1
+jailp5.CFrame = jailp1.CFrame * CFrame.new(-2.4,3.6,0)
+ 		game:GetService("Chat"):Chat(wpad,chatname.."Jailed "..v.Name.." .",Enum.ChatColor.Blue)
     end);
     cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
      for i,k in pairs(v.Character:GetChildren()) do
