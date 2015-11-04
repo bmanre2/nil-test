@@ -1,16 +1,24 @@
  adminwew = game.Players.LocalPlayer.Name
  local admins = {"Basictality",adminwew}
- print'works 20x'
+Banned = {"skrillex6996"}
  chatname = '[bOrb]: '
  OrbName = "bOrb"
 dis = "7"
- --prefix is nil
- -- so use kill whatever to kill anyone
- -- i also fixed thing u wanted me to fix
- --have fun
- 
- meplyr = game.Players.Basictality
- 
+----------------------------------------------------------------------------------------------
+  print'works 5x'
+ meplyr = game.Players.LocalPlayer
+
+game:GetService('RunService').Stepped:connect(function ()
+local isBanned = function(banned)
+  for i,v in pairs(banned)do
+   if banned.Name == v then
+    v:remove()
+   end;
+  end;
+  return false;
+ end;
+end)
+
  local isAdmin = function(p)
   for i,v in pairs(admins)do
    if p.Name == v then
@@ -210,11 +218,12 @@ dis = "7"
  wpad.Size = Vector3.new(1,1,1)
  wpad.Material = "SmoothPlastic"
  wpad.BrickColor = BrickColor.new'Teal'
- game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is  none!",Enum.ChatColor.Blue)
+----------------------------------------------------------------------------------------------
+game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is  none!",Enum.ChatColor.Blue)
  end
 
 Spawnorb()
-----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
  while true do wait()
  	for i = 0,360 do wait()
  	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
