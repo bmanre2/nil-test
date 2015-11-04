@@ -1,23 +1,12 @@
- adminwew = game.Players.LocalPlayer.Name
+
+adminwew = game.Players.LocalPlayer.Name
  local admins = {"Basictality",adminwew}
-Banned = {"skrillex6996"}
  chatname = '[bOrb]: '
  OrbName = "bOrb"
 dis = "7"
 ----------------------------------------------------------------------------------------------
-  print'works 5x'
+  print'works 15x'
  meplyr = game.Players.LocalPlayer
-
-game:GetService('RunService').Stepped:connect(function ()
-local isBanned = function(banned)
-  for i,v in pairs(banned)do
-   if banned.Name == v then
-    v:remove()
-   end;
-  end;
-  return false;
- end;
-end)
 
  local isAdmin = function(p)
   for i,v in pairs(admins)do
@@ -218,12 +207,20 @@ end)
  wpad.Size = Vector3.new(1,1,1)
  wpad.Material = "SmoothPlastic"
  wpad.BrickColor = BrickColor.new'Teal'
-----------------------------------------------------------------------------------------------
+-----------------------------------------Welcome-----------------------------------------------
 game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is  none!",Enum.ChatColor.Blue)
  end
 
 Spawnorb()
-----------------------------------------------------------------------------------------------
+--------------------------------Player Joining And Player Leaving------------------------------------------
+game.Players.PlayerAdded:connect(function(player)
+game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has joined!',Enum.ChatColor.Blue)
+end)
+
+game.Players.PlayerRemoving:connect(function(player)
+game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has left!',Enum.ChatColor.Blue)
+end)
+-----------------------------------------------------------------------------------------------
  while true do wait()
  	for i = 0,360 do wait()
  	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
