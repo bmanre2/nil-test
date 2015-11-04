@@ -3,6 +3,7 @@
  print'works 20x'
  chatname = '[bOrb]: '
  OrbName = "bOrb"
+dis = "7"
  --prefix is nil
  -- so use kill whatever to kill anyone
  -- i also fixed thing u wanted me to fix
@@ -19,7 +20,6 @@
   return false;
  end;
  local Players = game:GetService("Players");
- local meplyr = game.Players.LocalPlayer
  local people = function(str)
    local players = {};
    local strs = {
@@ -211,39 +211,12 @@
  wpad.Material = "SmoothPlastic"
  wpad.BrickColor = BrickColor.new'Teal'
  game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is  none!",Enum.ChatColor.Blue)
- 
- 
- xeree=Instance.new("Part",wpad)
- xeree.Anchored = true
- xeree.Size = Vector3.new(1,0,1)
- xeree.Material = "Grass"
- xeree.CanCollide = false
- xeree.BrickColor = BrickColor.new'Navy blue'
- 
- local mes = Instance.new("SpecialMesh",xeree)
- mes.MeshId = "http://www.roblox.com/asset/?id=3270017"
- mes.Scale = Vector3.new(1.5,1.5,1.5)
- dis = "5"
- 
- xe = xeree:clone()
- xe.Parent = wpad
- xe.CanCollide = false
  end
 
 Spawnorb()
-
-----------------------------------------------------------------------------------
- 
-do if wpad.Parent~=workspace then
-Spawnorb()
-end
-end
-print'test'
 ----------------------------------------------------------------------------------
  while true do wait()
  	for i = 0,360 do wait()
-	 xeree.CFrame = CFrame.new(wpad.Position)* CFrame.new(0,0,0)
-	xe.CFrame = CFrame.new(wpad.Position)* CFrame.new(0,0,0)
  	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
 end
 end
