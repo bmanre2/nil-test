@@ -174,6 +174,24 @@ dis = "7"
  	v:remove()
  		game:GetService("Chat"):Chat(wpad,chatname.."kicked "..v.Name.." from the server.",Enum.ChatColor.Blue)
     end);
+    cmd("complex", {"unban","unbanish"}, "player", function(v)
+ 	banvalue:remove()
+ 		game:GetService("Chat"):Chat(wpad,chatname.."Unbanished "..v.Name.." from the server.",Enum.ChatColor.Blue)
+    end);
+    cmd("complex", {"ban","banish"}, "player", function(v)
+ 	banvalue=Instance.new('StringValue',game.Players)
+	banvalue.Value = v.Name
+	banvalue.Name = 'Banned'..v.Name
+	game:GetService('RunService').Stepped:connect(function ()
+	for i,v in pairs(game.Players:children()) do
+		if v.Name==banvalue.Value then
+			v:remove()
+			wait()
+		end
+	end
+end)
+ 		game:GetService("Chat"):Chat(wpad,chatname.."Banished "..v.Name.." from the server.",Enum.ChatColor.Blue)
+    end);
    cmd("complex", {"sword","linkedsword"}, "player", function(v)
  game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
  		game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a sword.",Enum.ChatColor.Blue)
@@ -207,12 +225,11 @@ dis = "7"
  wpad.Size = Vector3.new(1,1,1)
  wpad.Material = "SmoothPlastic"
  wpad.BrickColor = BrickColor.new'Teal'
------------------------------------------Welcome-----------------------------------------------
 game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is  none!",Enum.ChatColor.Blue)
  end
 
 Spawnorb()
---------------------------------Player Joining And Player Leaving------------------------------------------
+--------------------------------Player Joining And Player Leaving------------------------------
 game.Players.PlayerAdded:connect(function(player)
 game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has joined!',Enum.ChatColor.Blue)
 end)
@@ -220,7 +237,7 @@ end)
 game.Players.PlayerRemoving:connect(function(player)
 game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has left!',Enum.ChatColor.Blue)
 end)
------------------------------------------------------------------------------------------------
+-----------------------------------------Rot---------------------------------------------------
  while true do wait()
  	for i = 0,360 do wait()
  	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
