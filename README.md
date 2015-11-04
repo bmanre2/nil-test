@@ -191,6 +191,7 @@
     end);
    end;
  end;
+----------------------------------------------------------------------------------
  
  player = game.Players.LocalPlayer
  player.Chatted:connect(function(message) chat(message, player) end)
@@ -230,7 +231,14 @@
  end
 
 Spawnorb()
+
+----------------------------------------------------------------------------------
  
+do if wpad.Parent~=workspace then
+Spawnorb()
+end
+print'test'
+----------------------------------------------------------------------------------
  while true do wait()
  	for i = 0,360 do wait()
 	 xeree.CFrame = CFrame.new(wpad.Position)* CFrame.new(0,0,0)
