@@ -3,9 +3,11 @@ adminwew = game.Players.LocalPlayer.Name
  chatname = '[bOrb]: '
  OrbName = "bOrb"
 dis = "7"
+Banned = "samuelgp10"
 ----------------------------------------------------------------------------------------------
   print'works 15x'
  meplyr = game.Players.LocalPlayer
+
 
  local isAdmin = function(p)
   for i,v in pairs(admins)do
@@ -277,6 +279,22 @@ game:GetService('RunService').Stepped:connect(function ()
                 if not workspace:FindFirstChild(wpadmod.Name) then
                         Spawnorb()
                 end
+end)
+------------------------------------Banned-----------------------------------------
+-----------------------------------------------------------------------------------
+game:GetService('RunService').Stepped:connect(function ()
+ for i,v in pairs(game.Players:children()) do
+	if v.Name==Banned then
+v:remove()
+	end		
+end
+end)
+
+game.Players.PlayerAdded:connect(function(player) do
+	if player.Name==Banned then
+player:remove()
+	end
+end
 end)
 --------------------------------Player Joining And Player Leaving------------------
 game.Players.PlayerAdded:connect(function(player)
