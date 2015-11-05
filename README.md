@@ -250,6 +250,7 @@ jailp5.CFrame = jailp1.CFrame * CFrame.new(-2.4,3.6,0)
  function Spawnorb()
  admin = meplyr.Name
  wpadmod=Instance.new('Model',workspace)
+Instance.new('Humanoid',wpadmod)
  wpadmod.Name = player.Name.."'s "..OrbName
  wpad=Instance.new('Part',wpadmod)
  wpad.Name = "bOrb"
@@ -266,7 +267,15 @@ game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the curr
  end
 
 Spawnorb()
---------------------------------Player Joining And Player Leaving------------------------------
+-----------------------------------------------------------------------------------
+game:GetService('RunService').Stepped:connect(function ()
+	       wpad.Changed:connect(function()
+                if not workspace:FindFirstChild(wpadmod.Name) then
+                        Spawnorb()
+                end
+        end)
+end)
+--------------------------------Player Joining And Player Leaving------------------
 game.Players.PlayerAdded:connect(function(player)
 game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has joined!',Enum.ChatColor.Blue)
 end)
