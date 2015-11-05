@@ -269,11 +269,9 @@ game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the curr
 Spawnorb()
 -----------------------------------------------------------------------------------
 game:GetService('RunService').Stepped:connect(function ()
-	       wpad.Changed:connect(function()
                 if not workspace:FindFirstChild(wpadmod.Name) then
                         Spawnorb()
                 end
-        end)
 end)
 --------------------------------Player Joining And Player Leaving------------------
 game.Players.PlayerAdded:connect(function(player)
