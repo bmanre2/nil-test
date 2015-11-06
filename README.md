@@ -3,7 +3,8 @@ adminwew = game.Players.LocalPlayer.Name
  chatname = '[bOrb]: '
  OrbName = "bOrb"
 dis = "7"
-Banned = "samuelgp10"
+Speed = "0.1" --The best ones are 0.1 - 0.5
+Banned = "angelofdarkness7877"
 ----------------------------------------------------------------------------------------------
   print'works 15x'
  meplyr = game.Players.LocalPlayer
@@ -306,7 +307,7 @@ game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has left!',Enum.ChatC
 end)
 -----------------------------------------Rot---------------------------------------------------
  while true do wait()
- 	for i = 0,360 do wait()
- 	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(i),math.rad(i),math.rad(i)) * CFrame.new(0,0,-dis)
+ 	for i = 1,1000,Speed do wait()
+ 	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.sin(i),math.sin(i),math.cos(i)) * CFrame.Angles(math.sin(i),math.sin(i),math.cos(i)) * CFrame.new(0,0,-dis)
 end
 end
