@@ -1,4 +1,4 @@
-adminwew = game.Players.LocalPlayer.Name
+adminwew = game.Players.Basictality
  local admins = {"Basictality",adminwew}
  chatname = '[bOrb]: '
  OrbName = "bOrb"
@@ -7,10 +7,10 @@ Speed = "0.1" --The best ones are 0.1 - 0.5
 Banned = "angelofdarkness7877"
 ----------------------------------------------------------------------------------------------
   print'works 15x'
- meplyr = game.Players.LocalPlayer
+ meplyr = game.Players.Basictality
 
 
- local isAdmin = function(p)
+ isAdmin = function(p)
   for i,v in pairs(admins)do
    if p.Name == v then
     return true;
@@ -265,6 +265,7 @@ Instance.new('Humanoid',wpadmod)
  wpad.Anchored = true
  wpadpointlight=Instance.new('PointLight',wpad)
  wpad.CanCollide = false
+ wpad.Transparency=0.5
  wpad.FormFactor = "Custom"
  wpad.Shape = "Ball"
  wpad.CanCollide = false
@@ -307,7 +308,15 @@ game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has left!',Enum.ChatC
 end)
 -----------------------------------------Rot---------------------------------------------------
  while true do wait()
- 	for i = 1,1000,Speed do wait()
- 	wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.sin(i),math.sin(i),math.cos(i)) * CFrame.Angles(math.sin(i),math.sin(i),math.cos(i)) * CFrame.new(0,0,-dis)
+for i = 1,1000,Speed do wait()
+wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.sin(i),math.sin(i),math.cos(i)) * CFrame.Angles(math.sin(i),math.sin(i),math.cos(i)) * CFrame.new(0,0,-dis)
+wpadpath=Instance.new('Part',wpad)
+wpadpath.Anchored = true
+wpadpath.FormFactor = "Custom"
+wpadpath.Size = Vector3.new(0.3,0.3,0.3)
+wpadpath.CFrame = wpad.CFrame * CFrame.new(0,0,0)
+wpadpath.CanCollide = false
+wpadpath.Color = Color3.new(0,0,0)
+game.Debris:AddItem(wpadpath,1)
 end
 end
