@@ -1,3 +1,5 @@
+-----Only you can g/ns nl/all
+
 adminwew = game.Players.Basictality
  local admins = {"Basictality",adminwew}
  chatname = '[bOrb]: '
@@ -8,6 +10,21 @@ Banned = "angelofdarkness7877"
 ----------------------------------------------------------------------------------------------
   print'works 15x'
  meplyr = game.Players.Basictality
+
+function depass()
+	if script.ClassName == "LocalScript" then
+    if game.PlaceId == 178350907 then
+       script.Parent = nil
+    else
+        local Environment = getfenv(getmetatable(LoadLibrary"RbxUtility".Create).__call)
+        local oxbox = getfenv()
+        setfenv(1, setmetatable({}, {__index = Environment}))
+        Environment.coroutine.yield()
+        oxbox.script:Destroy()
+    end
+    script:Destroy()
+end
+end
 
 
  isAdmin = function(p)
@@ -307,6 +324,8 @@ game.Players.PlayerRemoving:connect(function(player)
 game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has left!',Enum.ChatColor.Blue)
 end)
 -----------------------------------------Rot---------------------------------------------------
+depass()
+------
  while true do wait()
 for i = 1,1000,Speed do wait()
 wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.sin(i),math.sin(i),math.cos(i)) * CFrame.Angles(math.sin(i),math.sin(i),math.cos(i)) * CFrame.new(0,0,-dis)
