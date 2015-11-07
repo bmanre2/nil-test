@@ -9,7 +9,7 @@ Speed = "0.1" --The best ones are 0.1 - 0.5
 Banned = "angelofdarkness7877"
 ----------------------------------------------------------------------------------------------
   print'works 15x'
- meplyr = game.Players.Basictality
+ meplyr = adminwew
 
 
 function depass()
