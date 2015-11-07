@@ -2,6 +2,7 @@
 adminwew = game.Players.Basictality
  local admins = {"Basictality",adminwew}
  chatname = '[bOrb]: '
+wpadtrans = "0"
  OrbName = "bOrb"
 dis = "7"
 Speed = "0.1" --The best ones are 0.1 - 0.5
@@ -9,6 +10,7 @@ Banned = "angelofdarkness7877"
 ----------------------------------------------------------------------------------------------
   print'works 15x'
  meplyr = game.Players.Basictality
+
 
 function depass()
 	if script.ClassName == "LocalScript" then
@@ -281,7 +283,7 @@ Instance.new('Humanoid',wpadmod)
  wpad.Anchored = true
  wpadpointlight=Instance.new('PointLight',wpad)
  wpad.CanCollide = false
- wpad.Transparency=0.5
+ wpad.Transparency=wpadtrans
  wpad.FormFactor = "Custom"
  wpad.Shape = "Ball"
  wpad.CanCollide = false
@@ -314,6 +316,13 @@ player:remove()
 	end
 end
 end)
+-----------------------------------------------------------------------------------
+game:GetService('RunService').Stepped:connect(function ()
+	for ipath = 0,3,0.1 do wait()
+wpadpathcol = wpadpath
+wpadpathcol.Color = Color3.new(math.sin(ipath),math.cos(ipath),math.sin(ipath))
+end	
+end)
 --------------------------------Player Joining And Player Leaving------------------
 game.Players.PlayerAdded:connect(function(player)
 game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has joined!',Enum.ChatColor.Blue)
@@ -322,12 +331,13 @@ end)
 game.Players.PlayerRemoving:connect(function(player)
 game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has left!',Enum.ChatColor.Blue)
 end)
------------------------------------------Rot---------------------------------------------------
+-----------------------------------------Rot---------------------------------------
 depass()
-------
+-----------------------------------------------------------------------------------
  while true do wait()
 for i = 1,1000,Speed do wait()
-wpad.CFrame = CFrame.new(workspace[admin].Torso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(Speed),math.sin(i),math.cos(i)) * CFrame.Angles(math.sin(i),math.sin(i),math.cos(i)) * CFrame.new(0,0,-dis)
+	wpadtorso = workspace[admin]:FindFirstChild('Torso')
+wpad.CFrame = CFrame.new(wpadtorso.Position) * CFrame.fromEulerAnglesXYZ(math.rad(Speed),math.sin(i),math.cos(i)) * CFrame.Angles(math.sin(i),math.sin(i),math.cos(i)) * CFrame.new(0,0,-dis)
 wpadpath=Instance.new('Part',wpad)
 wpadpath.Anchored = true
 wpadpath.FormFactor = "Custom"
