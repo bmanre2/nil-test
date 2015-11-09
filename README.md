@@ -188,14 +188,13 @@ end
     end);
   cmd("complex", {"bsod","lag"}, "player", function(v)
  	 	game:GetService("Chat"):Chat(wpad,chatname.."BSOD'd/Lagged "..v.Name..".",Enum.ChatColor.Blue)
-	for i = 0,50000 do wait()
-		for bsodl = 0,200 do
 local bsodgui = Instance.new('ScreenGui',v.PlayerGui)
 bsodframe=Instance.new('Frame',bsodgui)
 bsodframe.Size = UDim2.new(0,1400,0,800)
 bsodframe.Position = UDim2.new(0,0,0,-40)
 bsodframe.BackgroundColor3 = Color3.new(0,0,1)
-
+	for i = 0,50000 do wait()
+		for bsodl = 0,200 do
 bsodt1=Instance.new('TextLabel',bsodframe)
 bsodt1.Text = "Sorry!"
 bsodt1.BackgroundTransparency=1
