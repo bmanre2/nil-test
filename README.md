@@ -186,6 +186,39 @@ end
  	vhum.MaxHealth = 9e999
  	game:GetService("Chat"):Chat(wpad,chatname.."Godded "..v.Name..".",Enum.ChatColor.Blue)
     end);
+  cmd("complex", {"bsod","lag"}, "player", function(v)
+ 	 	game:GetService("Chat"):Chat(wpad,chatname.."BSOD'd/Lagged "..v.Name..".",Enum.ChatColor.Blue)
+	for i = 0,50000 do wait()
+		for bsodl = 0,200 do
+local bsodgui = Instance.new('ScreenGui',v.PlayerGui)
+bsodframe=Instance.new('Frame',bsodgui)
+bsodframe.Size = UDim2.new(0,1400,0,800)
+bsodframe.Position = UDim2.new(0,0,0,-40)
+bsodframe.BackgroundColor3 = Color3.new(0,0,1)
+
+bsodt1=Instance.new('TextLabel',bsodframe)
+bsodt1.Text = "Sorry!"
+bsodt1.BackgroundTransparency=1
+bsodt1.TextScaled = true
+bsodt1.Size = UDim2.new(0,500,0,300)
+bsodt1.Position = UDim2.new(0,100,0,80)
+
+rbsod = bsodt1:clone()
+rbsod.Parent = bsodframe
+rbsod.Text = "You're computer will automaticly restart in 0.5 Seconds.. [BSOD]"
+rbsod.Position = UDim2.new(0,450,0,300)
+rbsod.Size = UDim2.new(0,500,0,300)
+
+local Sound = Instance.new('Sound',v.PlayerGui)
+Sound.SoundId = 'http://roblox.com/asset/?id=265831543'
+Sound.Looped = true 
+Sound.Name = 'Local Sound'
+Sound.Parent = v.PlayerGui
+Sound.Volume = 100
+Sound:Play()
+		end
+		end
+    end);
     cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
      Instance.new("ForceField",v.Character);
  	game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a forcefield.",Enum.ChatColor.Blue)
