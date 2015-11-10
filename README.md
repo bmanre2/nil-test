@@ -263,6 +263,19 @@ game.Debris:AddItem(jailp,0)
 game.Debris:AddItem(jailp1,0)
  		game:GetService("Chat"):Chat(wpad,chatname.."Unjailed "..v.Name..".",Enum.ChatColor.Blue)
     end);
+   cmd("complex", {"light","plight"}, "player", function(v)
+	game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." light.",Enum.ChatColor.Blue)
+	light=Instance.new('PointLight',v.Character.Torso)
+	light.Brightness = "5"
+	light.Range "5"
+    end);
+  cmd("complex", {"rlight","nolight"}, "player", function(v)
+	game:GetService("Chat"):Chat(wpad,chatname.."Removed "..v.Name.." light.",Enum.ChatColor.Blue)
+	for i,rlight in pairs(v.Character.Torso:children()) do if rlight.ClassName==light.ClassName then
+		game.Debris:AddItem(rlight,0)
+	end
+	end
+    end);
    cmd("complex", {"resp","respawn","res"}, "player", function(v)
 v:LoadCharacter()
  		game:GetService("Chat"):Chat(wpad,chatname.."Respawned "..v.Name..".",Enum.ChatColor.Blue)
