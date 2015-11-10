@@ -246,12 +246,26 @@ end)
     end);
    cmd("complex", {"sword","linkedsword"}, "player", function(v)
  game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
+ 		game:GetService("Chat"):Chat(wpad,chatname..v.Name.." has no Gravity.",Enum.ChatColor.Blue)
+    end);
+   cmd("complex", {"nogravity","ngrav","nograv"}, "player", function(v)
+bf = Instance.new("BodyForce")	
+bf.Parent =	v.Character.Torso	
+bf.force = Vector3.new(0,4000,0)	
  		game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a sword.",Enum.ChatColor.Blue)
+    end);
+  cmd("complex", {"grav","gravity"}, "player", function(v)
+game.Debris:AddItem(bf,0)	
+ 		game:GetService("Chat"):Chat(wpad,chatname..v.Name.." has Gravity.",Enum.ChatColor.Blue)
     end);
    cmd("complex", {"unjail","nojail"}, "player", function(v)
 game.Debris:AddItem(jailp,0)
 game.Debris:AddItem(jailp1,0)
  		game:GetService("Chat"):Chat(wpad,chatname.."Unjailed "..v.Name..".",Enum.ChatColor.Blue)
+    end);
+   cmd("complex", {"resp","respawn","res"}, "player", function(v)
+v:LoadCharacter()
+ 		game:GetService("Chat"):Chat(wpad,chatname.."Respawned "..v.Name..".",Enum.ChatColor.Blue)
     end);
    cmd("complex", {"jail","jailed"}, "player", function(v)
 jailp=Instance.new('Model',workspace)
@@ -349,12 +363,7 @@ player:remove()
 end
 end)
 -----------------------------------------------------------------------------------
-game:GetService('RunService').Stepped:connect(function ()
-	for ipath = 0,3,0.1 do wait()
-wpadpathcol = wpadpath
-wpadpathcol.Color = Color3.new(math.sin(ipath),math.cos(ipath),math.sin(ipath))
-end	
-end)
+
 --------------------------------Player Joining And Player Leaving------------------
 game.Players.PlayerAdded:connect(function(player)
 game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has joined!',Enum.ChatColor.Blue)
