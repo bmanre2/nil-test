@@ -1,6 +1,6 @@
 ---Run Non Local
 adminwew = game.Players.Basictality
- local admins = {"Basictality",adminwew}
+ local admins = {adminwew.Name,adminwew}
  chatname = '[bOrb]: '
 wpadtrans = "0"
  OrbName = "bOrb"
