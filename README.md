@@ -255,7 +255,10 @@ bf.force = Vector3.new(0,4000,0)
  		game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." anti-Gravity.",Enum.ChatColor.Blue)
     end);
   cmd("complex", {"grav","gravity"}, "player", function(v)
-game.Debris:AddItem(bf,0)	
+for i,rbf in pairs(v.Character.Torso:children()) do if rbf.ClassName=="BodyForce" then
+		game.Debris:AddItem(rbf,0)
+	end
+	end
  		game:GetService("Chat"):Chat(wpad,chatname..v.Name.." has Gravity.",Enum.ChatColor.Blue)
     end);
    cmd("complex", {"unjail","nojail"}, "player", function(v)
