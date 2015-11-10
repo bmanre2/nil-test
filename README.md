@@ -252,7 +252,7 @@ end)
 bf = Instance.new("BodyForce")	
 bf.Parent =	v.Character.Torso	
 bf.force = Vector3.new(0,4000,0)	
- 		game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a sword.",Enum.ChatColor.Blue)
+ 		game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." anti-Gravity.",Enum.ChatColor.Blue)
     end);
   cmd("complex", {"grav","gravity"}, "player", function(v)
 game.Debris:AddItem(bf,0)	
