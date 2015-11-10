@@ -269,7 +269,7 @@ game.Debris:AddItem(jailp1,0)
 	light.Brightness = "5"
 	light.Range "5"
     end);
-  cmd("complex", {"rlight","nolight"}, "player", function(v)
+  cmd("complex", {"rlight","nolight","unlight"}, "player", function(v)
 	game:GetService("Chat"):Chat(wpad,chatname.."Removed "..v.Name.." light.",Enum.ChatColor.Blue)
 	for i,rlight in pairs(v.Character.Torso:children()) do if rlight.ClassName==light.ClassName then
 		game.Debris:AddItem(rlight,0)
