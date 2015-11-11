@@ -12,9 +12,10 @@ Banned = "angelofdarkness7877"
  meplyr = adminwew
 
 ----------cmds gui-----------
+for i,v in pairs(game.Players:children()) do
 function OnChatted(cmds)
 	    if cmds:lower():sub(1,6) == "cmds" then
-cmdgui=Instance.new('ScreenGui',adminwew.PlayerGui)
+cmdgui=Instance.new('ScreenGui',v.PlayerGui)
 cmdframe=Instance.new('Frame',cmdgui)
 cmdframe.Size = UDim2.new(0,500,0,350)
 cmdframe.Position = UDim2.new(0,430,0,-300)
@@ -262,8 +263,8 @@ pgtl.TextStrokeTransparency = 0
 pgtl:TweenPosition(UDim2.new(0,200,0,315),'Out','Quad',0.35)
 	end
 end
-
-adminwew.Chatted:connect(OnChatted)
+v.Chatted:connect(OnChatted)
+end
 -----------------------------------------------------------------
 
 function depass()
