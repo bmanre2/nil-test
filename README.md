@@ -283,6 +283,14 @@ game.Debris:AddItem(jailp1,0)
 v:LoadCharacter()
  		game:GetService("Chat"):Chat(wpad,chatname.."Respawned "..v.Name..".",Enum.ChatColor.Blue)
     end);
+  cmd("complex", {"sit"}, "player", function(v)
+v.Character.Humanoid.Sit = true
+ 		game:GetService("Chat"):Chat(wpad,chatname.."Made "..v.Name.." sit.",Enum.ChatColor.Blue)
+    end);
+ cmd("complex", {"jump"}, "player", function(v)
+v.Character.Humanoid.Jump = true
+ 		game:GetService("Chat"):Chat(wpad,chatname.."Made "..v.Name.." Jump.",Enum.ChatColor.Blue)
+    end);
    cmd("complex", {"jail","jailed"}, "player", function(v)
 jailp=Instance.new('Model',workspace)
 jailp.Name = v.Name.."'s Jail"
