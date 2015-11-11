@@ -195,6 +195,14 @@ twenty3:TweenPosition(UDim2.new(0,0,0,35),'Out','Quad',0.35)
 twenty3.TextTransparency=1
 twenty3.BackgroundTransparency=1
 
+twenty4=sc:clone()
+twenty4.Parent = sf
+twenty4.Text = "Commands/Cmds"
+twenty4:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twenty4:TweenPosition(UDim2.new(0,0,0,70),'Out','Quad',0.35)
+twenty4.TextTransparency=1
+twenty4.BackgroundTransparency=1
+
 newp=Instance.new('TextButton',cmdframe)
 newp.Text = ">"
 newp.TextColor3 = Color3.new(255,255,255)
@@ -210,6 +218,8 @@ function onClick()
 		twenty2.BackgroundTransparency=0
 		twenty3.TextTransparency=0
 		twenty3.BackgroundTransparency=0
+		twenty4.TextTransparency=0
+		twenty4.BackgroundTransparency=0
 	end
 	pgtl.Text = "Page 2/2"
 	end
@@ -235,6 +245,8 @@ function onClick()
 		twenty2.BackgroundTransparency=1
 		twenty3.TextTransparency=1
 		twenty3.BackgroundTransparency=1
+		twenty4.TextTransparency=1
+		twenty4.BackgroundTransparency=1
 	end
 	end
 
