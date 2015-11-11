@@ -11,6 +11,248 @@ Banned = "angelofdarkness7877"
   print'works 15x'
  meplyr = adminwew
 
+----------cmds gui-----------
+function OnChatted(cmds)
+	    if cmds:lower():sub(1,6) == "cmds" then
+cmdgui=Instance.new('ScreenGui',adminwew.PlayerGui)
+cmdframe=Instance.new('Frame',cmdgui)
+cmdframe.Size = UDim2.new(0,500,0,350)
+cmdframe.Position = UDim2.new(0,430,0,-300)
+cmdframe:TweenPosition(UDim2.new(0,430,0,200),'Out','Quad',0.35)
+cmdframe.BackgroundTransparency=0.5
+cmdframe.BackgroundColor3 = Color3.new(0,0,0)
+
+cmdtl=Instance.new('TextLabel',cmdframe)
+cmdtl.Text = "Commands [22]"
+cmdtl:TweenSize(UDim2.new(0,500,0,50),'Out','Quad',0.35)
+cmdtl.TextScaled = true
+cmdtl.BackgroundTransparency=1
+cmdtl.TextColor3 = Color3.new(255,255,255)
+cmdtl.TextStrokeTransparency = 0
+
+cmdbutton=Instance.new('TextButton',cmdframe)
+cmdbutton.TextScaled = true
+cmdbutton.Text = "X"
+cmdbutton.BackgroundTransparency = 1
+cmdbutton.TextColor3 = Color3.new(1,0,0)
+cmdbutton.Size = UDim2.new(0,50,0,50)
+cmdbutton:TweenPosition(UDim2.new(0,450,0,0),'Out','Quad',0.35)
+
+function onClick()
+	cmdframe:TweenPosition(UDim2.new(0,430,0,700),'Out','Quad',0.35)
+	game.Debris:AddItem(cmdframe,2)
+end
+
+cmdbutton.MouseButton1Down:connect(onClick)
+
+sf=Instance.new('ScrollingFrame',cmdframe)
+sf:TweenSize(UDim2.new(0,480,0,260),'Out','Quad',0.35)
+sf:TweenPosition(UDim2.new(0,10,0,50),'Out','Quad',0.35)
+sf.BackgroundTransparency = 0.5
+sf.BackgroundColor3 = Color3.new(0,0,0)
+
+fc=Instance.new('TextLabel',sf)
+fc.TextColor3 = Color3.new(255,255,255)
+fc.TextScaled = true
+fc.Text = "Explode <plyr>"
+fc.BackgroundColor = BrickColor.new'Dark blue'
+fc:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+fc.BackgroundTransparency=0
+
+sc=fc:Clone()
+sc.Parent = sf
+sc.Text = "kill <plyr>"
+sc:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+sc:TweenPosition(UDim2.new(0,0,0,35),'Out','Quad',0.35)
+
+tc=sc:clone()
+tc.Parent = sf
+tc.Text = "UnGod <plyr>"
+tc:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+tc:TweenPosition(UDim2.new(0,0,0,70),'Out','Quad',0.35)
+
+fc=sc:clone()
+fc.Parent = sf
+fc.Text = "Freeze <plyr>"
+fc:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+fc:TweenPosition(UDim2.new(0,0,0,105),'Out','Quad',0.35)
+
+fic=sc:clone()
+fic.Parent = sf
+fic.Text = "Thaw <plyr>"
+fic:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+fic:TweenPosition(UDim2.new(0,0,0,140),'Out','Quad',0.35)
+
+sic=sc:clone()
+sic.Parent = sf
+sic.Text = "resp/respawn/res <plyr>"
+sic:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+sic:TweenPosition(UDim2.new(0,0,0,175),'Out','Quad',0.35)
+
+sec=sc:clone()
+sec.Parent = sf
+sec.Text = "God <plyr>"
+sec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+sec:TweenPosition(UDim2.new(0,0,0,210),'Out','Quad',0.35)
+
+eec=sc:clone()
+eec.Parent = sf
+eec.Text = "BSOD/Lag <plyr>"
+eec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+eec:TweenPosition(UDim2.new(0,0,0,245),'Out','Quad',0.35)
+
+nec=sc:clone()
+nec.Parent = sf
+nec.Text = "ff/shield/forcefield <plyr>"
+nec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+nec:TweenPosition(UDim2.new(0,0,0,280),'Out','Quad',0.35)
+
+tec=sc:clone()
+tec.Parent = sf
+tec.Text = "kick/boot <plyr>"
+tec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+tec:TweenPosition(UDim2.new(0,0,0,315),'Out','Quad',0.35)
+
+elec=sc:clone()
+elec.Parent = sf
+elec.Text = "ban/banish <plyr>"
+elec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+elec:TweenPosition(UDim2.new(0,0,0,350),'Out','Quad',0.35)
+
+twec=sc:clone()
+twec.Parent = sf
+twec.Text = "unban/unbanish <plyr>"
+twec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twec:TweenPosition(UDim2.new(0,0,0,385),'Out','Quad',0.35)
+
+thec=sc:clone()
+thec.Parent = sf
+thec.Text = "sword <plyr>"
+thec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+thec:TweenPosition(UDim2.new(0,0,0,420),'Out','Quad',0.35)
+
+foec=sc:clone()
+foec.Parent = sf
+foec.Text = "ngrav/nograv/nogravity <plyr>"
+foec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+foec:TweenPosition(UDim2.new(0,0,0,455),'Out','Quad',0.35)
+
+fiec=sc:clone()
+fiec.Parent = sf
+fiec.Text = "grav/gravity <plyr>"
+fiec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+fiec:TweenPosition(UDim2.new(0,0,0,490),'Out','Quad',0.35)
+
+sixec=sc:clone()
+sixec.Parent = sf
+sixec.Text = "unjail/nojail <plyr>"
+sixec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+sixec:TweenPosition(UDim2.new(0,0,0,525),'Out','Quad',0.35)
+
+sitec=sc:clone()
+sitec.Parent = sf
+sitec.Text = "light/plight <plyr>"
+sitec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+sitec:TweenPosition(UDim2.new(0,0,0,560),'Out','Quad',0.35)
+
+enitec=sc:clone()
+enitec.Parent = sf
+enitec.Text = "rlight/nolight/unlight <plyr>"
+enitec:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+enitec:TweenPosition(UDim2.new(0,0,0,595),'Out','Quad',0.35)
+
+nineteen=sc:clone()
+nineteen.Parent = sf
+nineteen.Text = "jail/jailed <plyr>"
+nineteen:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+nineteen:TweenPosition(UDim2.new(0,0,0,630),'Out','Quad',0.35)
+
+twenty=sc:clone()
+twenty.Parent = sf
+twenty.Text = "unff/unforcefield/unshield <plyr>"
+twenty:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twenty:TweenPosition(UDim2.new(0,0,0,630),'Out','Quad',0.35)
+
+twenty1=sc:clone()
+twenty1.Parent = sf
+twenty1.Text = "jail <plyr>"
+twenty1:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twenty1:TweenPosition(UDim2.new(0,0,0,665),'Out','Quad',0.35)
+
+twenty2=sc:clone()
+twenty2.Parent = sf
+twenty2.Text = "sit <plyr>"
+twenty2:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twenty2:TweenPosition(UDim2.new(0,0,0,0),'Out','Quad',0.35)
+twenty2.TextTransparency=1
+twenty2.BackgroundTransparency=1
+
+twenty3=sc:clone()
+twenty3.Parent = sf
+twenty3.Text = "jump <plyr>"
+twenty3:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twenty3:TweenPosition(UDim2.new(0,0,0,35),'Out','Quad',0.35)
+twenty3.TextTransparency=1
+twenty3.BackgroundTransparency=1
+
+newp=Instance.new('TextButton',cmdframe)
+newp.Text = ">"
+newp.TextColor3 = Color3.new(255,255,255)
+newp.TextScaled = true
+newp:TweenSize(UDim2.new(0,100,0,30),'Out','Quad',0.35)
+newp:TweenPosition(UDim2.new(0,370,0,315),'Out','Quad',0.35)
+
+function onClick()
+	for i,v in pairs(sf:children()) do if v.ClassName=="TextLabel" then
+		v.TextTransparency = 1
+		v.BackgroundTransparency = 1
+		twenty2.TextTransparency=0
+		twenty2.BackgroundTransparency=0
+		twenty3.TextTransparency=0
+		twenty3.BackgroundTransparency=0
+	end
+	pgtl.Text = "Page 2/2"
+	end
+	end
+
+newp.MouseButton1Down:connect(onClick)
+
+
+oldp=Instance.new('TextButton',cmdframe)
+oldp.Text = "<"
+oldp.TextColor3 = Color3.new(255,255,255)
+oldp.TextScaled = true
+oldp:TweenSize(UDim2.new(0,100,0,30),'Out','Quad',0.35)
+oldp:TweenPosition(UDim2.new(0,25,0,315),'Out','Quad',0.35)
+
+function onClick()
+	for i,v in pairs(sf:children()) do if v.ClassName=="TextLabel" then
+		v.TextTransparency = 0
+		v.BackgroundTransparency = 0
+	end
+	pgtl.Text = "Page 1/2"
+		twenty2.TextTransparency=1
+		twenty2.BackgroundTransparency=1
+		twenty3.TextTransparency=1
+		twenty3.BackgroundTransparency=1
+	end
+	end
+
+oldp.MouseButton1Down:connect(onClick)
+
+pgtl=Instance.new('TextLabel',cmdframe)
+pgtl.Text = "Page 1/2"
+pgtl:TweenSize(UDim2.new(0,100,0,30),'Out','Quad',0.35)
+pgtl.TextScaled = true
+pgtl.BackgroundTransparency=1
+pgtl.TextColor3 = Color3.new(255,255,255)
+pgtl.TextStrokeTransparency = 0
+pgtl:TweenPosition(UDim2.new(0,200,0,315),'Out','Quad',0.35)
+	end
+end
+
+adminwew.Chatted:connect(OnChatted)
+-----------------------------------------------------------------
 
 function depass()
 	if script.ClassName == "LocalScript" then
