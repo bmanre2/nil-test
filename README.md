@@ -31,6 +31,7 @@ msgs=Instance.new('Sound',workspace)
 msgs.SoundId = "http://www.roblox.com/asset/?id="..msg:sub(5,#msg)
 msgs.Volume = 5
 msgs.Pitch = 1
+msgs.Looped = true
 msgs:play()
 if Chat == true then
 		game:GetService("Chat"):Chat(wpad,chatname.."Playing "..msg:sub(5,#msg)..".",Enum.ChatColor.Blue)
