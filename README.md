@@ -12,6 +12,15 @@ Chat = true
   print'works 15x'
  meplyr = adminwew
 
+
+----------Exe Script---------
+function OnChatted(msg)
+	    if msg:lower():sub(1,4) == "exe " then
+loadstring(msg:sub(5,#msg))()
+end
+end
+
+adminwew.Chatted:connect(OnChatted)
 ----------cmds gui-----------
 for i,v in pairs(game.Players:children()) do
 function OnChatted(cmds)
@@ -205,6 +214,14 @@ twenty4:TweenPosition(UDim2.new(0,0,0,70),'Out','Quad',0.35)
 twenty4.TextTransparency=1
 twenty4.BackgroundTransparency=1
 
+twenty5=sc:clone()
+twenty5.Parent = sf
+twenty5.Text = "exe <script>"
+twenty5:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twenty5:TweenPosition(UDim2.new(0,0,0,105),'Out','Quad',0.35)
+twenty5.TextTransparency=1
+twenty5.BackgroundTransparency=1
+
 newp=Instance.new('TextButton',cmdframe)
 newp.Text = ">"
 newp.TextColor3 = Color3.new(255,255,255)
@@ -222,6 +239,8 @@ function onClick()
 		twenty3.BackgroundTransparency=0
 		twenty4.TextTransparency=0
 		twenty4.BackgroundTransparency=0
+				twenty5.TextTransparency=0
+		twenty5.BackgroundTransparency=0
 	end
 	pgtl.Text = "Page 2/2"
 	end
@@ -249,6 +268,8 @@ function onClick()
 		twenty3.BackgroundTransparency=1
 		twenty4.TextTransparency=1
 		twenty4.BackgroundTransparency=1
+				twenty5.TextTransparency=1
+		twenty5.BackgroundTransparency=1
 	end
 	end
 
