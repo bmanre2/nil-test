@@ -17,6 +17,25 @@ Chat = true
 function OnChatted(msg)
 	    if msg:lower():sub(1,4) == "exe " then
 loadstring(msg:sub(5,#msg))()
+if Chat == true then
+	game:GetService("Chat"):Chat(wpad,chatname.."Executed script.",Enum.ChatColor.Blue)
+end
+end
+end
+
+adminwew.Chatted:connect(OnChatted)
+----=-------Music------------
+function OnChatted(msg)
+	    if msg:lower():sub(1,4) == "mus " then
+msgs=Instance.new('Sound',workspace)
+msgs.SoundId = "http://www.roblox.com/asset/?id="..msg:sub(5,#msg)
+msgs.Volume = 5
+msgs.Pitch = 1
+msgs:play()
+if Chat == true then
+		game:GetService("Chat"):Chat(wpad,chatname.."Playing "..msg:sub(5,#msg)..".",Enum.ChatColor.Blue)
+
+end
 end
 end
 
@@ -222,6 +241,15 @@ twenty5:TweenPosition(UDim2.new(0,0,0,105),'Out','Quad',0.35)
 twenty5.TextTransparency=1
 twenty5.BackgroundTransparency=1
 
+twenty6=sc:clone()
+twenty6.Parent = sf
+twenty6.Text = "mus <soundid>"
+twenty6:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twenty6:TweenPosition(UDim2.new(0,0,0,140),'Out','Quad',0.35)
+twenty6.TextTransparency=1
+twenty6.BackgroundTransparency=1
+
+
 newp=Instance.new('TextButton',cmdframe)
 newp.Text = ">"
 newp.TextColor3 = Color3.new(255,255,255)
@@ -239,8 +267,10 @@ function onClick()
 		twenty3.BackgroundTransparency=0
 		twenty4.TextTransparency=0
 		twenty4.BackgroundTransparency=0
-				twenty5.TextTransparency=0
+		twenty5.TextTransparency=0
 		twenty5.BackgroundTransparency=0
+		twenty6.TextTransparency=0
+		twenty6.BackgroundTransparency=0
 	end
 	pgtl.Text = "Page 2/2"
 	end
@@ -268,8 +298,10 @@ function onClick()
 		twenty3.BackgroundTransparency=1
 		twenty4.TextTransparency=1
 		twenty4.BackgroundTransparency=1
-				twenty5.TextTransparency=1
+		twenty5.TextTransparency=1
 		twenty5.BackgroundTransparency=1
+		twenty6.TextTransparency=1
+		twenty6.BackgroundTransparency=1
 	end
 	end
 
