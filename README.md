@@ -501,6 +501,11 @@ if Chat == true then
  end
    end);
     cmd("complex", {"unban","unbanish"}, "player", function(v)
+	for i,unban in pairs(game.Players:children()) do
+		if unban.ClassName=="StringValue" then
+			game.Debris:AddItem(unban,0)
+		end
+	end
  	game.Debris:AddItem(banvalue,0)
  		game:GetService("Chat"):Chat(wpad,chatname.."Unbanished "..v.Name.." from the server.",Enum.ChatColor.Blue)
     end);
