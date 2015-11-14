@@ -27,9 +27,14 @@ adminwew.Chatted:connect(OnChatted)
 ----=-------Music------------
 function OnChatted(msg)
 	    if msg:lower():sub(1,4) == "mus " then
+				find = 'BasMus'
+	if workspace:FindFirstChild(find) then
+game.Debris:AddItem(workspace[find],0)
+		end
 msgs=Instance.new('Sound',workspace)
 msgs.SoundId = "http://www.roblox.com/asset/?id="..msg:sub(5,#msg)
 msgs.Volume = 5
+msgs.Name = 'BasMus'
 msgs.Pitch = 1
 msgs.Looped = true
 msgs:play()
