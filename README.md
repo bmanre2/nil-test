@@ -7,6 +7,7 @@ wpadtrans = "0"
 dis = "7"
 Speed = "0.1" --The best ones are 0.1 - 0.5
 Banned = "angelofdarkness7877"
+Chat = true
 ----------------------------------------------------------------------------------------------
   print'works 15x'
  meplyr = adminwew
@@ -387,20 +388,28 @@ end
  	explp.BlastRadius = "1";
  	explp.BlastPressure = "500000";
  	explp.Position = v.Character.Torso.Position;
+if Chat == true then
  				game:GetService("Chat"):Chat(wpad,chatname.."Exploded "..v.Name..".",Enum.ChatColor.Blue)
-    end);
+  end
+  end);
     cmd("complex", {"ungod"}, "player", function(v)
      vhum1 = v.Character:FindFirstChild('Humanoid')
  	vhum1.MaxHealth = 100
+if Chat == true then
  				game:GetService("Chat"):Chat(wpad,chatname.."UnGoded "..v.Name..".",Enum.ChatColor.Blue)
-    end);
+  end
+  end);
     cmd("complex", {"kill"}, "player", function(v)
      v.Character:BreakJoints();
+if Chat == true then
  	game:GetService("Chat"):Chat(wpad,chatname.."killed "..v.Name..".",Enum.ChatColor.Blue)
-    end);
+    end
+end);
     cmd("complex", {"freeze"}, "player", function(v)
+	if Chat == true then
  	game:GetService("Chat"):Chat(wpad,chatname.."Froze "..v.Name..".",Enum.ChatColor.Blue)
-     freezes=Instance.new('Part',v.Character)
+     end
+freezes=Instance.new('Part',v.Character)
  freezes.FormFactor = "Custom"
  freezes.Size = Vector3.new(4.5,6.5,4.5)
  freezes.Material = "SmoothPlastic"
@@ -433,16 +442,22 @@ end
  v.Character['Left Leg'].Anchored = false
  v.Character['Right Arm'].Anchored = false
  v.Character['Right Leg'].Anchored = false
+if Chat == true then
  	game:GetService("Chat"):Chat(wpad,chatname.."Thawed "..v.Name..".",Enum.ChatColor.Blue)
- game.Debriss:AddItem(di,3)
+ end
+game.Debriss:AddItem(di,3)
  end);
     cmd("complex", {"god"}, "player", function(v)
      vhum = v.Character:FindFirstChild('Humanoid')
  	vhum.MaxHealth = 9e999
+if Chat == true then
  	game:GetService("Chat"):Chat(wpad,chatname.."Godded "..v.Name..".",Enum.ChatColor.Blue)
-    end);
+   end
+ end);
   cmd("complex", {"bsod","lag"}, "player", function(v)
+	if Chat == true then
  	 	game:GetService("Chat"):Chat(wpad,chatname.."BSOD'd/Lagged "..v.Name..".",Enum.ChatColor.Blue)
+end
 local bsodgui = Instance.new('ScreenGui',v.PlayerGui)
 bsodframe=Instance.new('Frame',bsodgui)
 bsodframe.Size = UDim2.new(0,1400,0,800)
@@ -475,12 +490,16 @@ Sound:Play()
     end);
     cmd("complex", {"ff","forcefield","shield"}, "player", function(v)
      Instance.new("ForceField",v.Character);
+if Chat == true then
  	game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." a forcefield.",Enum.ChatColor.Blue)
-    end);
+   end
+ end);
     cmd("complex", {"kick","boot"}, "player", function(v)
  	v:remove()
+if Chat == true then
  		game:GetService("Chat"):Chat(wpad,chatname.."kicked "..v.Name.." from the server.",Enum.ChatColor.Blue)
-    end);
+ end
+   end);
     cmd("complex", {"unban","unbanish"}, "player", function(v)
  	game.Debris:AddItem(banvalue,0)
  		game:GetService("Chat"):Chat(wpad,chatname.."Unbanished "..v.Name.." from the server.",Enum.ChatColor.Blue)
@@ -496,39 +515,51 @@ Sound:Play()
 			wait()
 		end
 	end
-end)
+	end)
+	if Chat == true then
  		game:GetService("Chat"):Chat(wpad,chatname.."Banished "..v.Name.." from the server.",Enum.ChatColor.Blue)
-    end);
+  end
+  end);
    cmd("complex", {"sword","linkedsword"}, "player", function(v)
  game:service'InsertService':LoadAsset(125013769):children()[1].Parent = v.Backpack
- 		game:GetService("Chat"):Chat(wpad,chatname..v.Name.." has no Gravity.",Enum.ChatColor.Blue)
-    end);
+ 		if Chat == true then
+game:GetService("Chat"):Chat(wpad,chatname..v.Name.." has no Gravity.",Enum.ChatColor.Blue)
+   end
+ end);
    cmd("complex", {"nogravity","ngrav","nograv"}, "player", function(v)
 bf = Instance.new("BodyForce")	
 bf.Parent =	v.Character.Torso	
 bf.force = Vector3.new(0,4000,0)	
- 		game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." anti-Gravity.",Enum.ChatColor.Blue)
-    end);
+ 		if Chat == true then
+game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." anti-Gravity.",Enum.ChatColor.Blue)
+    end
+end);
   cmd("complex", {"grav","gravity"}, "player", function(v)
 for i,rbf in pairs(v.Character.Torso:children()) do if rbf.ClassName=="BodyForce" then
 		game.Debris:AddItem(rbf,0)
 	end
 	end
- 		game:GetService("Chat"):Chat(wpad,chatname..v.Name.." has Gravity.",Enum.ChatColor.Blue)
-    end);
+ 		if Chat == true then
+game:GetService("Chat"):Chat(wpad,chatname..v.Name.." has Gravity.",Enum.ChatColor.Blue)
+   end
+ end);
    cmd("complex", {"unjail","nojail"}, "player", function(v)
 game.Debris:AddItem(jailp,0)
 game.Debris:AddItem(jailp1,0)
  		game:GetService("Chat"):Chat(wpad,chatname.."Unjailed "..v.Name..".",Enum.ChatColor.Blue)
     end);
    cmd("complex", {"light","plight"}, "player", function(v)
+	if Chat == true then
 	game:GetService("Chat"):Chat(wpad,chatname.."Gave "..v.Name.." light.",Enum.ChatColor.Blue)
+	end
 	light=Instance.new('PointLight',v.Character.Torso)
 	light.Brightness = "5"
 	light.Range "5"
     end);
   cmd("complex", {"rlight","nolight","unlight"}, "player", function(v)
+	if Chat == true then
 	game:GetService("Chat"):Chat(wpad,chatname.."Removed "..v.Name.." light.",Enum.ChatColor.Blue)
+	end
 	for i,rlight in pairs(v.Character.Torso:children()) do if rlight.ClassName=="PointLight" then
 		game.Debris:AddItem(rlight,0)
 	end
@@ -536,16 +567,22 @@ game.Debris:AddItem(jailp1,0)
     end);
    cmd("complex", {"resp","respawn","res"}, "player", function(v)
 v:LoadCharacter()
- 		game:GetService("Chat"):Chat(wpad,chatname.."Respawned "..v.Name..".",Enum.ChatColor.Blue)
-    end);
+ 		if Chat == true then
+game:GetService("Chat"):Chat(wpad,chatname.."Respawned "..v.Name..".",Enum.ChatColor.Blue)
+    end
+end);
   cmd("complex", {"sit"}, "player", function(v)
 v.Character.Humanoid.Sit = true
- 		game:GetService("Chat"):Chat(wpad,chatname.."Made "..v.Name.." sit.",Enum.ChatColor.Blue)
+ 		if Chat == true then
+game:GetService("Chat"):Chat(wpad,chatname.."Made "..v.Name.." sit.",Enum.ChatColor.Blue)
+end
     end);
  cmd("complex", {"jump"}, "player", function(v)
 v.Character.Humanoid.Jump = true
- 		game:GetService("Chat"):Chat(wpad,chatname.."Made "..v.Name.." Jump.",Enum.ChatColor.Blue)
-    end);
+ 		if Chat == true then
+game:GetService("Chat"):Chat(wpad,chatname.."Made "..v.Name.." Jump.",Enum.ChatColor.Blue)
+    end
+end);
    cmd("complex", {"jail","jailed"}, "player", function(v)
 jailp=Instance.new('Model',workspace)
 jailp.Name = v.Name.."'s Jail"
@@ -587,9 +624,11 @@ jailp5.CFrame = jailp1.CFrame * CFrame.new(-2.4,3.6,0)
     cmd("complex", {"unff","unforcefield","unshield"}, "player", function(v)
      for i,k in pairs(v.Character:GetChildren()) do
       if k.ClassName == "ForceField" then
- 			game:GetService("Chat"):Chat(wpad,chatname.."Taken "..v.Name.." forcefield away.",Enum.ChatColor.Blue)
+ 			if Chat == true then
+game:GetService("Chat"):Chat(wpad,chatname.."Taken "..v.Name.." forcefield away.",Enum.ChatColor.Blue)
+end
        k:Destroy();
-      end;
+end;
      end;
     end);
    end;
@@ -615,8 +654,10 @@ Instance.new('Humanoid',wpadmod)
  wpad.Size = Vector3.new(1,1,1)
  wpad.Material = "SmoothPlastic"
  wpad.BrickColor = BrickColor.new'Teal'
+if Chat == true then
 game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is none!",Enum.ChatColor.Blue)
  end
+end
 
 Spawnorb()
 -----------------------------------------------------------------------------------
@@ -645,11 +686,15 @@ end)
 
 --------------------------------Player Joining And Player Leaving------------------
 game.Players.PlayerAdded:connect(function(player)
+if Chat == true then
 game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has joined!',Enum.ChatColor.Blue)
+end
 end)
 
 game.Players.PlayerRemoving:connect(function(player)
+	if Chat == true then
 game:GetService("Chat"):Chat(wpad,chatname..player.Name..' has left!',Enum.ChatColor.Blue)
+end
 end)
 -----------------------------------------Rot---------------------------------------
 depass()
