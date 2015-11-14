@@ -53,7 +53,7 @@ cmdframe.BackgroundTransparency=0.5
 cmdframe.BackgroundColor3 = Color3.new(0,0,0)
 
 cmdtl=Instance.new('TextLabel',cmdframe)
-cmdtl.Text = "Commands [22]"
+cmdtl.Text = "Commands [24]"
 cmdtl:TweenSize(UDim2.new(0,500,0,50),'Out','Quad',0.35)
 cmdtl.TextScaled = true
 cmdtl.BackgroundTransparency=1
