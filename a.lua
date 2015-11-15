@@ -1,5 +1,5 @@
----Run Non Local
-adminwew = game.Players.Basictality
+---Run Non Loca
+adminwew = game.Players.Control22
  local admins = {adminwew.Name,adminwew}
  chatname = '[bOrb]: '
 wpadtrans = "0"
