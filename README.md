@@ -9,10 +9,19 @@ Speed = "0.1" --The best ones are 0.1 - 0.5
 Banned = "angelofdarkness7877"
 Chat = true
 ----------------------------------------------------------------------------------------------
-  print'works 15x'
+  print[[-----------//bOrb\\-----------'
+		------Made by Basictality-----'
+		------------\\End//------------']]
  meplyr = adminwew
 
+-------------Time------------
+function OnChatted(msg)
+	    if msg:lower():sub(1,5) == "time " then
+game.Lighting.TimeOfDay = msg:sub(6,#msg)
+end
+end
 
+adminwew.Chatted:connect(OnChatted)
 ----------Exe Script---------
 function OnChatted(msg)
 	    if msg:lower():sub(1,4) == "exe " then
@@ -255,6 +264,13 @@ twenty6:TweenPosition(UDim2.new(0,0,0,140),'Out','Quad',0.35)
 twenty6.TextTransparency=1
 twenty6.BackgroundTransparency=1
 
+twenty7=sc:clone()
+twenty7.Parent = sf
+twenty7.Text = "time <number>"
+twenty7:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twenty7:TweenPosition(UDim2.new(0,0,0,175),'Out','Quad',0.35)
+twenty7.TextTransparency=1
+twenty7.BackgroundTransparency=1
 
 newp=Instance.new('TextButton',cmdframe)
 newp.Text = ">"
@@ -277,6 +293,8 @@ function onClick()
 		twenty5.BackgroundTransparency=0
 		twenty6.TextTransparency=0
 		twenty6.BackgroundTransparency=0
+		twenty7.TextTransparency=0
+		twenty7.BackgroundTransparency=0
 	end
 	pgtl.Text = "Page 2/2"
 	end
@@ -308,6 +326,8 @@ function onClick()
 		twenty5.BackgroundTransparency=1
 		twenty6.TextTransparency=1
 		twenty6.BackgroundTransparency=1
+		twenty7.TextTransparency=1
+		twenty7.BackgroundTransparency=1
 	end
 	end
 
