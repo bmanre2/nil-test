@@ -9,11 +9,18 @@ Speed = "0.1" --The best ones are 0.1 - 0.5
 Banned = "angelofdarkness7877"
 Chat = true
 ----------------------------------------------------------------------------------------------
-  print[[-----------//bOrb\\-----------'
-		------Made by Basictality-----'
-		------------\\End//------------']]
+  print[[-----------//bOrb\\-----------
+------Made by Basictality-----
+------------\\End//------------']]
  meplyr = adminwew
+-----------Ambient-----------
+function OnChatted(msg)
+	    if msg:lower():sub(1,8) == "ambient " then
+game.Lighting.Ambient = Color3.new(msg:sub(9,#msg),msg:sub(9,#msg),msg:sub(9,#msg))
+end
+end
 
+adminwew.Chatted:connect(OnChatted)
 -------------Time------------
 function OnChatted(msg)
 	    if msg:lower():sub(1,5) == "time " then
@@ -272,6 +279,15 @@ twenty7:TweenPosition(UDim2.new(0,0,0,175),'Out','Quad',0.35)
 twenty7.TextTransparency=1
 twenty7.BackgroundTransparency=1
 
+twenty8=sc:clone()
+twenty8.Parent = sf
+twenty8.Text = "ambient <number>"
+twenty8:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twenty8:TweenPosition(UDim2.new(0,0,0,220),'Out','Quad',0.35)
+twenty8.TextTransparency=1
+twenty8.BackgroundTransparency=1
+
+
 newp=Instance.new('TextButton',cmdframe)
 newp.Text = ">"
 newp.TextColor3 = Color3.new(255,255,255)
@@ -295,6 +311,8 @@ function onClick()
 		twenty6.BackgroundTransparency=0
 		twenty7.TextTransparency=0
 		twenty7.BackgroundTransparency=0
+		twenty8.TextTransparency=0
+		twenty8.BackgroundTransparency=0
 	end
 	pgtl.Text = "Page 2/2"
 	end
@@ -328,6 +346,8 @@ function onClick()
 		twenty6.BackgroundTransparency=1
 		twenty7.TextTransparency=1
 		twenty7.BackgroundTransparency=1
+		twenty8.TextTransparency=1
+		twenty8.BackgroundTransparency=1
 	end
 	end
 
