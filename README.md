@@ -13,6 +13,17 @@ Chat = true
 ------Made by Basictality-----
 ------------\\End//------------']]
  meplyr = adminwew
+------------Pitch------------
+function OnChatted(msg)
+	    if msg:lower():sub(1,6) == "pitch " then
+	find = 'BasMus'
+	if workspace:FindFirstChild(find) then
+workspace[find].Pitch = msg:sub(7,#msg)
+	end
+	end
+end
+
+adminwew.Chatted:connect(OnChatted)
 -----------Ambient-----------
 function OnChatted(msg)
 	    if msg:lower():sub(1,8) == "ambient " then
@@ -43,7 +54,7 @@ adminwew.Chatted:connect(OnChatted)
 ----=-------Music------------
 function OnChatted(msg)
 	    if msg:lower():sub(1,4) == "mus " then
-				find = 'BasMus'
+		find = 'BasMus'
 	if workspace:FindFirstChild(find) then
 game.Debris:AddItem(workspace[find],0)
 		end
@@ -283,9 +294,17 @@ twenty8=sc:clone()
 twenty8.Parent = sf
 twenty8.Text = "ambient <number>"
 twenty8:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
-twenty8:TweenPosition(UDim2.new(0,0,0,220),'Out','Quad',0.35)
+twenty8:TweenPosition(UDim2.new(0,0,0,210),'Out','Quad',0.35)
 twenty8.TextTransparency=1
 twenty8.BackgroundTransparency=1
+
+twenty9=sc:clone()
+twenty9.Parent = sf
+twenty9.Text = "pitch <number>"
+twenty9:TweenSize(UDim2.new(0,475,0,30),'Out','Quad',0.35)
+twenty9:TweenPosition(UDim2.new(0,0,0,245),'Out','Quad',0.35)
+twenty9.TextTransparency=1
+twenty9.BackgroundTransparency=1
 
 
 newp=Instance.new('TextButton',cmdframe)
@@ -313,6 +332,8 @@ function onClick()
 		twenty7.BackgroundTransparency=0
 		twenty8.TextTransparency=0
 		twenty8.BackgroundTransparency=0
+		twenty9.TextTransparency=0
+		twenty9.BackgroundTransparency=0
 	end
 	pgtl.Text = "Page 2/2"
 	end
@@ -348,6 +369,8 @@ function onClick()
 		twenty7.BackgroundTransparency=1
 		twenty8.TextTransparency=1
 		twenty8.BackgroundTransparency=1
+		twenty9.TextTransparency=1
+		twenty9.BackgroundTransparency=1
 	end
 	end
 
