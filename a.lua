@@ -1,5 +1,5 @@
 ---Run Non Loca
-adminwew = game.Players.Control22
+adminwew = owner
  local admins = {adminwew.Name,adminwew}
  chatname = '[bOrb]: '
 wpadtrans = "0"
@@ -782,7 +782,7 @@ Instance.new('Humanoid',wpadmod)
  wpad.Material = "SmoothPlastic"
  wpad.BrickColor = BrickColor.new'Teal'
 if Chat == true then
-game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is none!",Enum.ChatColor.Blue)
+game:GetService("Chat"):Chat(wpad,chatname.."Welcome "..meplyr.Name..", the current prefix is none! Basictality has been given credit.",Enum.ChatColor.Blue)
  end
 end
 
