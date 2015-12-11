@@ -1,9 +1,11 @@
----Run Non Loca
+--[[ --BORB CREATED BY BASICTALITY
+--REVIVING BY CONTROL22
+]]--
 adminwew = owner
  local admins = {adminwew.Name,adminwew}
- chatname = '[bOrb]: '
+ chatname = '[bOrb Revived]: '
 wpadtrans = "0"
- OrbName = "bOrb"
+ OrbName = "bOrb Revived"
 dis = "7"
 Speed = "0.1" --The best ones are 0.1 - 0.5
 Banned = "angelofdarkness7877"
